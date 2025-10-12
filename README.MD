@@ -108,17 +108,17 @@ Alle Einstellungen werden ausfallsicher gespeichert und stehen deshalb nach
 dem nächsten Start genau so wieder zur Verfügung.
 
 
-### Wie funktioniert das mit den Speichern?
+### Wie funktioniert das mit den CW Speichern?
 
-Der Keyer verfügt über zwei Speicherplätze. Diese können über die Kommandos
-"M1" und "M2" programmiert und mit den Tasten &lt;1&gt; und &lt;2&gt;
-abgerufen werden. Während ein Speichertext ausgegeben wird kann mittels Druck
-auf einen beliebigen Knopf oder Betätigung der Morsetaste die Ausgabe
-abgebrochen werden.
+Der Keyer verfügt über zwei Speicherplätze für Nachrichten in Morseocde. Diese
+können über die Kommandos "M1" und "M2" programmiert und mit den Tasten
+&lt;1&gt; und &lt;2&gt; abgerufen werden. Während ein Speichertext ausgegeben
+wird, kann mittels Druck auf einen beliebigen Knopf oder Betätigung der
+Morsetaste die Ausgabe abgebrochen werden.
 
 Für die Programmierung wird &lt;Cmd&gt; gedrückt und "M1" oder "M2" mit dem
-Paddle gegeben. Dann folgt der zu speichernde Text. Eine Pause von 2 Sekunden
-oder mehr beendet die Eingabe mit einem Quittungston.
+Paddle gegeben. Dann folgt der zu speichernde Text. Eine Pause von mindestens
+2 Sekunden beendet die Eingabe mit einem Quittungston.
 
 Um Speicherplatz zu sparen, werden alle Zeiten auf volle Vielfache der für ein
 "Dit" benötigten Zeit gerundet. Der benötigte Speicherplatz pro Element mit
@@ -130,7 +130,7 @@ Text wird nicht gespeichert. Die Programmierung kann auch durch Loslassen der
 bereits gespeicherte Text bleibt dann erhalten.
 
 
-### Wieso produziert der Keyer die Tonausgabe des Handfunkgeräts?
+### Wieso erfolgt die Tonausgabe des Handfunkgeräts über den Keyer?
 
 Das ist bei Handfunkgeräten mit Kenwood "Norm" für den Anschluß eines externen
 Mikrofons leider zwingend. Bei dieser Beschaltung werden zwei Stecker
@@ -160,11 +160,12 @@ Keyers am DIN Stecker auf Masse zu legen.
 ### Was ist mit Iambic A/B?
 
 Daran rätsle ich auch herum. Der Keyer implementiert Iambic A mit optionalem
-Speicher. Ich selber benutze eigentlich immer Iambic B an anderen Funkgeräten,
-habe aber mit dem Keyer überhaupt kein Problem, obwohl die Software definitiv
-Iambic A implementiert. Ich werde das Thema noch etwas erforschen, vermute
-aber, dass der Unterschied zwischen Iambic A und B normalerweise nicht zum
-Tragen kommt und dass der Speicher viel entscheidender ist.
+Punkt/Strich-Speicher. Ich selber benutze eigentlich immer Iambic B an anderen
+Funkgeräten, habe aber mit dem Keyer überhaupt kein Problem, obwohl die
+Software definitiv Iambic A implementiert. Ich werde das Thema noch etwas
+erforschen, vermute aber, dass der Unterschied zwischen Iambic A und B
+normalerweise nicht zum Tragen kommt und dass der Speicher viel entscheidender
+ist.
 
 Falls ich feststellen sollte, dass es hier doch große Unterschiede gibt, werde
 ich die Software entsprechend erweitern. Die Kommandos "IA" und "IB" sind
@@ -181,6 +182,20 @@ Deshalb können auf Github keine Issues angelegt werden. Bei Problemen bitte
 ich darum, mich per Mail zu kontaktieren.
 
 
+### Gibt es bekannte Probleme?
+
+Der Keyer erzeugt permanent einen sehr leisen Pfeifton im Lautsprecher
+unabhängig von der Einstellung des Lautstärkereglers. Ich vermute, dass es
+sich um die 4kHz Interrupt Taktfrequenz handelt und werde dem noch nachgehen.
+
+Beim Prototyp hatte ich teilweise Probleme mit Einstrahlungen durch das
+Handfunkgerät. Ich empfehle, ein abgeschirmtes Kabel für die Verbindung zum
+Funkgerät zu verwenden und evtl. die Ferritperlen auf dem Board gegen kleine
+Induktivitäten auszutauschen und/oder an der Stelle noch mit 100pF
+abzublocken. Sobald mehr Erfahrungen vorliegen werde ich ggf. entsprechende
+Änderungen der Schaltung vornehmen.
+
+
 ### Wo gibt's den Keyer zu kaufen?
 
 Gar nicht (zumindest bei mir). Von mir gibt es
@@ -195,7 +210,12 @@ auf GitHub. Mit dabei ist eine Teileliste mit (größtenteils und ohne Garantie)
 Reichelt Bestellnummern.
 
 Wenn genug Interesse besteht, kann ich nochmals einen Satz Platinen fertigen
-lassen und - solange übrig sind - welche abgeben. GGf. mit programmierter AVR
+lassen und - solange übrig sind - welche abgeben. Ggf. mit programmierter AVR
 CPU. Ich vertreibe aber keine Fertiggeräte oder Bausätze. Falls das jemand
 machen will habe ich aber nichts dagegen.
 
+
+### Was gibt es sonst zu beachten?
+
+Die Lizenz erlaubt so ziemlich alles, bis darauf die Entwürfe als eigene
+auszugeben. Für Schäden beim Nachbau übernehme ich keine Haftung.
