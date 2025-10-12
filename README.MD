@@ -195,6 +195,10 @@ Induktivitäten auszutauschen und/oder an der Stelle noch mit 100pF
 abzublocken. Sobald mehr Erfahrungen vorliegen werde ich ggf. entsprechende
 Änderungen der Schaltung vornehmen.
 
+Der Footprint für die DIN Buchse auf dem Board ist falsch. Die Buchse kann
+montiert werden, wenn die vorderen Anschlüsse rechtwinklig abgebogen werden.
+Die Buchse sitzt dann aber ca. 2mm zu weit hinten.
+
 
 ### Wo gibt's den Keyer zu kaufen?
 
