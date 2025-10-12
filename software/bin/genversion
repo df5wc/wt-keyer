@@ -1,0 +1,64 @@
+#!/bin/bash
+
+COMPILEDATE=$(date +%y.%m.%d)
+COMPILETIME=$(date +%H.%M)
+
+
+error()
+# Log an error to output, send mail and terminate
+{
+    echo "${PROGNAME}: $*" >&2
+    exit 1
+}
+
+
+
+convert()
+# Convert a string into the internal digit represenation
+{
+    NAME=$1
+    ARG=$2
+
+    # Output
+    echo "static const unsigned char ${NAME}[] PROGMEM = \"$ARG\";"
+}
+
+# Get the program name without a path
+PROGNAME=$(basename $0)
+
+# Get the subversion revision number and check it
+SVNVERSION=$(svnversion 2>/dev/null)
+if [ $? -ne 0 ]; then
+    echo "Warning: Cannot determine SVN version number - will use \"unknown\"!" >&2
+    SVNVERSION="Unknown version"
+else
+    case "${SVNVERSION}" in
+        Unversioned*)
+            echo "Warning: Cannot determine SVN version number - will use \"unknown\"!" >&2
+            SVNVERSION="Unknown version"
+            ;;
+	*:*)
+            error "Cannot handle mixed SVN numbers: ${SVNVERSION}"
+            SVNVERSION="V${SVNVERSION}"
+	    ;;
+
+       	*M)
+            echo "Warning: Working copy has local modifications!" >&2
+            SVNVERSION="V${SVNVERSION}"
+	    ;;
+        *)
+            SVNVERSION="V${SVNVERSION}"
+            ;;
+    esac
+fi
+
+#
+echo "/* This file is automagically created. DO NOT CHANGE! */"
+echo
+echo "#include <avr/pgmspace.h>"
+echo
+echo "const char PROGMEM SVNRev[] = \"${SVNVERSION} by DF5WC\";"
+
+
+
+

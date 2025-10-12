@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rpt="http://openoffice.org/2005/report" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:xforms="http://www.w3.org/2002/xforms" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
+ <office:meta><meta:creation-date>2025-09-24T08:48:43.776010211</meta:creation-date><dc:date>2025-09-27T11:31:20.258480308</dc:date><meta:editing-duration>PT2M19S</meta:editing-duration><meta:editing-cycles>2</meta:editing-cycles><meta:generator>LibreOffice/7.3.7.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><meta:document-statistic meta:table-count="1" meta:cell-count="166" meta:object-count="0"/></office:meta>
+ <office:settings>
+  <config:config-item-set config:name="ooo:view-settings">
+   <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">12707</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">16256</config:config-item>
+   <config:config-item-map-indexed config:name="Views">
+    <config:config-item-map-entry>
+     <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
+     <config:config-item-map-named config:name="Tables">
+      <config:config-item-map-entry config:name="Sheet1">
+       <config:config-item config:name="CursorPositionX" config:type="int">1</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">35</config:config-item>
+       <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">0</config:config-item>
+       <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
+       <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+       <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+      </config:config-item-map-entry>
+     </config:config-item-map-named>
+     <config:config-item config:name="ActiveTable" config:type="string">Sheet1</config:config-item>
+     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1457</config:config-item>
+     <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+     <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+     <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
+     <config:config-item config:name="ShowPageBreakPreview" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="ShowNotes" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
+     <config:config-item config:name="ShowPageBreaks" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="HasSheetTabs" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="IsValueHighlightingEnabled" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="IsSnapToRaster" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="RasterResolutionX" config:type="int">1000</config:config-item>
+     <config:config-item config:name="RasterResolutionY" config:type="int">1000</config:config-item>
+     <config:config-item config:name="RasterSubdivisionX" config:type="int">1</config:config-item>
+     <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
+     <config:config-item config:name="IsRasterAxisSynchronized" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
+  </config:config-item-set>
+  <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="AllowPrintJobCancel" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AutoCalculate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
+   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item-map-indexed config:name="ForbiddenCharacters">
+    <config:config-item-map-entry>
+     <config:config-item config:name="Language" config:type="string">de</config:config-item>
+     <config:config-item config:name="Country" config:type="string">DE</config:config-item>
+     <config:config-item config:name="Variant" config:type="string"/>
+     <config:config-item config:name="BeginLine" config:type="string"/>
+     <config:config-item config:name="EndLine" config:type="string"/>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
+   <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
+   <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="HasSheetTabs" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsDocumentShared" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsRasterAxisSynchronized" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsSnapToRaster" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="LinkUpdateMode" config:type="short">3</config:config-item>
+   <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrinterName" config:type="string">DCPL3550CDW</config:config-item>
+   <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">oQH+/0RDUEwzNTUwQ0RXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpEQ1BMMzU1MENEVwAAAAAAAAAAAAAAAAAAAAAWAAMAwgAAAAAAAAAEAAhSAAAEdAAASm9iRGF0YSAxCnByaW50ZXI9RENQTDM1NTBDRFcKb3JpZW50YXRpb249UG9ydHJhaXQKY29waWVzPTEKY29sbGF0ZT1mYWxzZQptYXJnaW5hZGp1c3RtZW50PTAsMCwwLDAKY29sb3JkZXB0aD0yNApwc2xldmVsPTAKcGRmZGV2aWNlPTEKY29sb3JkZXZpY2U9MApQUERDb250ZXh0RGF0YQpCUk1vbm9Db2xvcjpNb25vAFBhZ2VTaXplOkE0AAASAENPTVBBVF9EVVBMRVhfTU9ERQ8ARHVwbGV4TW9kZTo6T2Zm</config:config-item>
+   <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="RasterResolutionX" config:type="int">1000</config:config-item>
+   <config:config-item config:name="RasterResolutionY" config:type="int">1000</config:config-item>
+   <config:config-item config:name="RasterSubdivisionX" config:type="int">1</config:config-item>
+   <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
+   <config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowNotes" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowPageBreaks" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SyntaxStringRef" config:type="short">7</config:config-item>
+   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
+   <config:config-item-map-named config:name="ScriptConfiguration">
+    <config:config-item-map-entry config:name="Sheet1">
+     <config:config-item config:name="CodeName" config:type="string">Sheet1</config:config-item>
+    </config:config-item-map-entry>
+   </config:config-item-map-named>
+  </config:config-item-set>
+ </office:settings>
+ <office:scripts>
+  <office:script script:language="ooo:Basic">
+   <ooo:libraries xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ooo:library-embedded ooo:name="Standard"/>
+   </ooo:libraries>
+  </office:script>
+ </office:scripts>
+ <office:font-face-decls>
+  <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable"/>
+  <style:font-face style:name="Lohit Devanagari" svg:font-family="&apos;Lohit Devanagari&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans CJK SC" svg:font-family="&apos;Noto Sans CJK SC&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+ </office:font-face-decls>
+ <office:styles>
+  <style:default-style style:family="table-cell">
+   <style:paragraph-properties style:tab-stop-distance="1.25cm"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:font-size="10pt" fo:language="de" fo:country="DE" style:font-name-asian="Noto Sans CJK SC" style:font-size-asian="10pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Lohit Devanagari" style:font-size-complex="10pt" style:language-complex="hi" style:country-complex="IN"/>
+  </style:default-style>
+  <number:number-style style:name="N0">
+   <number:number number:min-integer-digits="1"/>
+  </number:number-style>
+  <number:number-style style:name="N114">
+   <number:text/>
+  </number:number-style>
+  <number:time-style style:name="N113">
+   <number:text>1,234 </number:text>
+   <number:minutes/>
+   <number:seconds/>
+  </number:time-style>
+  <number:time-style style:name="N112">
+   <number:text>-1,234 </number:text>
+   <number:minutes/>
+   <number:seconds/>
+  </number:time-style>
+  <number:number-style style:name="N111">
+   <number:number number:decimal-places="3" number:min-decimal-places="3" number:min-integer-digits="1"/>
+  </number:number-style>
+  <number:number-style style:name="N110">
+   <number:number number:decimal-places="3" number:min-decimal-places="3" number:min-integer-digits="1"/>
+   <number:text> ms</number:text>
+  </number:number-style>
+  <number:number-style style:name="N109">
+   <number:number number:decimal-places="1" number:min-decimal-places="1" number:min-integer-digits="1"/>
+  </number:number-style>
+  <number:number-style style:name="N108">
+   <number:number number:decimal-places="0" number:min-decimal-places="0" number:min-integer-digits="1"/>
+   <number:text> Hz</number:text>
+  </number:number-style>
+  <number:number-style style:name="N107">
+   <number:number number:decimal-places="0" number:min-decimal-places="0" number:min-integer-digits="1"/>
+   <number:text> μs</number:text>
+  </number:number-style>
+  <style:style style:name="Default" style:family="table-cell"/>
+  <style:style style:name="Heading" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#000000" fo:font-size="24pt" fo:font-style="normal" fo:font-weight="bold" style:font-size-asian="24pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-size-complex="24pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="table-cell" style:parent-style-name="Heading">
+   <style:text-properties fo:font-size="18pt" style:font-size-asian="18pt" style:font-size-complex="18pt"/>
+  </style:style>
+  <style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="table-cell" style:parent-style-name="Heading">
+   <style:text-properties fo:font-size="12pt" style:font-size-asian="12pt" style:font-size-complex="12pt"/>
+  </style:style>
+  <style:style style:name="Text" style:family="table-cell" style:parent-style-name="Default"/>
+  <style:style style:name="Note" style:family="table-cell" style:parent-style-name="Text">
+   <style:table-cell-properties fo:background-color="#ffffcc" style:diagonal-bl-tr="none" style:diagonal-tl-br="none" fo:border="0.74pt solid #808080"/>
+   <style:text-properties fo:color="#333333"/>
+  </style:style>
+  <style:style style:name="Footnote" style:family="table-cell" style:parent-style-name="Text">
+   <style:text-properties fo:color="#808080" fo:font-style="italic" style:font-style-asian="italic" style:font-style-complex="italic"/>
+  </style:style>
+  <style:style style:name="Hyperlink" style:family="table-cell" style:parent-style-name="Text">
+   <style:text-properties fo:color="#0000ee" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="#0000ee"/>
+  </style:style>
+  <style:style style:name="Status" style:family="table-cell" style:parent-style-name="Default"/>
+  <style:style style:name="Good" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ccffcc"/>
+   <style:text-properties fo:color="#006600"/>
+  </style:style>
+  <style:style style:name="Neutral" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ffffcc"/>
+   <style:text-properties fo:color="#996600"/>
+  </style:style>
+  <style:style style:name="Bad" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ffcccc"/>
+   <style:text-properties fo:color="#cc0000"/>
+  </style:style>
+  <style:style style:name="Warning" style:family="table-cell" style:parent-style-name="Status">
+   <style:text-properties fo:color="#cc0000"/>
+  </style:style>
+  <style:style style:name="Error" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#cc0000"/>
+   <style:text-properties fo:color="#ffffff" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="Accent" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="Accent_20_1" style:display-name="Accent 1" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#000000"/>
+   <style:text-properties fo:color="#ffffff"/>
+  </style:style>
+  <style:style style:name="Accent_20_2" style:display-name="Accent 2" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#808080"/>
+   <style:text-properties fo:color="#ffffff"/>
+  </style:style>
+  <style:style style:name="Accent_20_3" style:display-name="Accent 3" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#dddddd"/>
+  </style:style>
+  <style:style style:name="Result" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:font-style="italic" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="bold" style:font-style-asian="italic" style:font-weight-asian="bold" style:font-style-complex="italic" style:font-weight-complex="bold"/>
+  </style:style>
+ </office:styles>
+ <office:automatic-styles>
+  <style:style style:name="co1" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.258cm"/>
+  </style:style>
+  <style:style style:name="co2" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="3.457cm"/>
+  </style:style>
+  <style:style style:name="co3" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.477cm"/>
+  </style:style>
+  <style:style style:name="ro1" style:family="table-row">
+   <style:table-row-properties style:row-height="0.452cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ta1" style:family="table" style:master-page-name="Default">
+   <style:table-properties table:display="true" style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="ce1" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="center"/>
+   <style:text-properties fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="ce2" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N109">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="center"/>
+  </style:style>
+  <style:style style:name="ce3" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N110">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="end"/>
+  </style:style>
+  <style:style style:name="ce4" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N108">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="end"/>
+  </style:style>
+  <style:style style:name="ce5" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N107">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="end"/>
+  </style:style>
+  <style:style style:name="ce6" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N110"/>
+  <style:style style:name="ce7" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N111">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="center"/>
+   <style:text-properties fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="ce8" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N110">
+   <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
+   <style:paragraph-properties fo:text-align="center"/>
+   <style:text-properties fo:font-weight="bold"/>
+  </style:style>
+  <style:page-layout style:name="pm1">
+   <style:page-layout-properties style:writing-mode="lr-tb"/>
+   <style:header-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.25cm"/>
+   </style:header-style>
+   <style:footer-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.25cm"/>
+   </style:footer-style>
+  </style:page-layout>
+ </office:automatic-styles>
+ <office:master-styles>
+  <style:master-page style:name="Default" style:page-layout-name="pm1">
+   <style:header>
+    <text:p><text:sheet-name>???</text:sheet-name></text:p>
+   </style:header>
+   <style:header-left style:display="false"/>
+   <style:header-first style:display="false"/>
+   <style:footer>
+    <text:p>Page <text:page-number>1</text:page-number></text:p>
+   </style:footer>
+   <style:footer-left style:display="false"/>
+   <style:footer-first style:display="false"/>
+  </style:master-page>
+ </office:master-styles>
+ <office:body>
+  <office:spreadsheet>
+   <table:calculation-settings table:automatic-find-labels="false" table:use-regular-expressions="false" table:use-wildcards="true"/>
+   <table:table table:name="Sheet1" table:style-name="ta1">
+    <table:table-column table:style-name="co1" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co1" table:default-cell-style-name="ce3"/>
+    <table:table-column table:style-name="co2" table:default-cell-style-name="ce6"/>
+    <table:table-column table:style-name="co3" table:default-cell-style-name="ce7"/>
+    <table:table-column table:style-name="co1" table:default-cell-style-name="ce6"/>
+    <table:table-column table:style-name="co1" table:number-columns-repeated="1019" table:default-cell-style-name="Default"/>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>WPM</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>dit length</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>rounded dit length</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>real WPM</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
+      <text:p>error</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="float" office:value="10" calcext:value-type="float">
+      <text:p>10,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A2])" office:value-type="float" office:value="120" calcext:value-type="float">
+      <text:p>120,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B2]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="120" calcext:value-type="float">
+      <text:p>120,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C2])" office:value-type="float" office:value="10" calcext:value-type="float">
+      <text:p>10,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A2]-[.D2])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A2]+1" office:value-type="float" office:value="11" calcext:value-type="float">
+      <text:p>11,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A3])" office:value-type="float" office:value="109.090909090909" calcext:value-type="float">
+      <text:p>109,091 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B3]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="109" calcext:value-type="float">
+      <text:p>109,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C3])" office:value-type="float" office:value="11.0091743119266" calcext:value-type="float">
+      <text:p>11,009</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A3]-[.D3])" office:value-type="float" office:value="0.00917431192660523" calcext:value-type="float">
+      <text:p>0,009 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A3]+1" office:value-type="float" office:value="12" calcext:value-type="float">
+      <text:p>12,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A4])" office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B4]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C4])" office:value-type="float" office:value="12" calcext:value-type="float">
+      <text:p>12,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A4]-[.D4])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A4]+1" office:value-type="float" office:value="13" calcext:value-type="float">
+      <text:p>13,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A5])" office:value-type="float" office:value="92.3076923076923" calcext:value-type="float">
+      <text:p>92,308 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B5]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="92.25" calcext:value-type="float">
+      <text:p>92,250 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C5])" office:value-type="float" office:value="13.0081300813008" calcext:value-type="float">
+      <text:p>13,008</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A5]-[.D5])" office:value-type="float" office:value="0.00813008130081272" calcext:value-type="float">
+      <text:p>0,008 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A5]+1" office:value-type="float" office:value="14" calcext:value-type="float">
+      <text:p>14,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A6])" office:value-type="float" office:value="85.7142857142857" calcext:value-type="float">
+      <text:p>85,714 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B6]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="85.75" calcext:value-type="float">
+      <text:p>85,750 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C6])" office:value-type="float" office:value="13.9941690962099" calcext:value-type="float">
+      <text:p>13,994</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A6]-[.D6])" office:value-type="float" office:value="0.00583090379008766" calcext:value-type="float">
+      <text:p>0,006 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A6]+1" office:value-type="float" office:value="15" calcext:value-type="float">
+      <text:p>15,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A7])" office:value-type="float" office:value="80" calcext:value-type="float">
+      <text:p>80,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B7]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="80" calcext:value-type="float">
+      <text:p>80,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C7])" office:value-type="float" office:value="15" calcext:value-type="float">
+      <text:p>15,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A7]-[.D7])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A7]+1" office:value-type="float" office:value="16" calcext:value-type="float">
+      <text:p>16,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A8])" office:value-type="float" office:value="75" calcext:value-type="float">
+      <text:p>75,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B8]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="75" calcext:value-type="float">
+      <text:p>75,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C8])" office:value-type="float" office:value="16" calcext:value-type="float">
+      <text:p>16,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A8]-[.D8])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A8]+1" office:value-type="float" office:value="17" calcext:value-type="float">
+      <text:p>17,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A9])" office:value-type="float" office:value="70.5882352941177" calcext:value-type="float">
+      <text:p>70,588 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B9]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="70.5" calcext:value-type="float">
+      <text:p>70,500 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C9])" office:value-type="float" office:value="17.0212765957447" calcext:value-type="float">
+      <text:p>17,021</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A9]-[.D9])" office:value-type="float" office:value="0.0212765957446805" calcext:value-type="float">
+      <text:p>0,021 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A9]+1" office:value-type="float" office:value="18" calcext:value-type="float">
+      <text:p>18,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A10])" office:value-type="float" office:value="66.6666666666667" calcext:value-type="float">
+      <text:p>66,667 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B10]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="66.75" calcext:value-type="float">
+      <text:p>66,750 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C10])" office:value-type="float" office:value="17.9775280898876" calcext:value-type="float">
+      <text:p>17,978</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A10]-[.D10])" office:value-type="float" office:value="0.0224719101123583" calcext:value-type="float">
+      <text:p>0,022 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A10]+1" office:value-type="float" office:value="19" calcext:value-type="float">
+      <text:p>19,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A11])" office:value-type="float" office:value="63.1578947368421" calcext:value-type="float">
+      <text:p>63,158 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B11]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="63.25" calcext:value-type="float">
+      <text:p>63,250 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C11])" office:value-type="float" office:value="18.9723320158103" calcext:value-type="float">
+      <text:p>18,972</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A11]-[.D11])" office:value-type="float" office:value="0.0276679841897227" calcext:value-type="float">
+      <text:p>0,028 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A11]+1" office:value-type="float" office:value="20" calcext:value-type="float">
+      <text:p>20,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A12])" office:value-type="float" office:value="60" calcext:value-type="float">
+      <text:p>60,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B12]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="60" calcext:value-type="float">
+      <text:p>60,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C12])" office:value-type="float" office:value="20" calcext:value-type="float">
+      <text:p>20,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A12]-[.D12])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A12]+1" office:value-type="float" office:value="21" calcext:value-type="float">
+      <text:p>21,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A13])" office:value-type="float" office:value="57.1428571428571" calcext:value-type="float">
+      <text:p>57,143 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B13]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="57.25" calcext:value-type="float">
+      <text:p>57,250 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C13])" office:value-type="float" office:value="20.9606986899563" calcext:value-type="float">
+      <text:p>20,961</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A13]-[.D13])" office:value-type="float" office:value="0.039301310043669" calcext:value-type="float">
+      <text:p>0,039 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A13]+1" office:value-type="float" office:value="22" calcext:value-type="float">
+      <text:p>22,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A14])" office:value-type="float" office:value="54.5454545454546" calcext:value-type="float">
+      <text:p>54,545 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B14]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="54.5" calcext:value-type="float">
+      <text:p>54,500 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C14])" office:value-type="float" office:value="22.0183486238532" calcext:value-type="float">
+      <text:p>22,018</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A14]-[.D14])" office:value-type="float" office:value="0.0183486238532105" calcext:value-type="float">
+      <text:p>0,018 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A14]+1" office:value-type="float" office:value="23" calcext:value-type="float">
+      <text:p>23,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A15])" office:value-type="float" office:value="52.1739130434783" calcext:value-type="float">
+      <text:p>52,174 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B15]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="52.25" calcext:value-type="float">
+      <text:p>52,250 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C15])" office:value-type="float" office:value="22.9665071770335" calcext:value-type="float">
+      <text:p>22,967</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A15]-[.D15])" office:value-type="float" office:value="0.0334928229665081" calcext:value-type="float">
+      <text:p>0,033 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A15]+1" office:value-type="float" office:value="24" calcext:value-type="float">
+      <text:p>24,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A16])" office:value-type="float" office:value="50" calcext:value-type="float">
+      <text:p>50,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B16]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="50" calcext:value-type="float">
+      <text:p>50,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C16])" office:value-type="float" office:value="24" calcext:value-type="float">
+      <text:p>24,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A16]-[.D16])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A16]+1" office:value-type="float" office:value="25" calcext:value-type="float">
+      <text:p>25,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A17])" office:value-type="float" office:value="48" calcext:value-type="float">
+      <text:p>48,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B17]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="48" calcext:value-type="float">
+      <text:p>48,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C17])" office:value-type="float" office:value="25" calcext:value-type="float">
+      <text:p>25,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A17]-[.D17])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A17]+1" office:value-type="float" office:value="26" calcext:value-type="float">
+      <text:p>26,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A18])" office:value-type="float" office:value="46.1538461538462" calcext:value-type="float">
+      <text:p>46,154 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B18]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="46.25" calcext:value-type="float">
+      <text:p>46,250 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C18])" office:value-type="float" office:value="25.9459459459459" calcext:value-type="float">
+      <text:p>25,946</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A18]-[.D18])" office:value-type="float" office:value="0.0540540540540526" calcext:value-type="float">
+      <text:p>0,054 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A18]+1" office:value-type="float" office:value="27" calcext:value-type="float">
+      <text:p>27,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A19])" office:value-type="float" office:value="44.4444444444444" calcext:value-type="float">
+      <text:p>44,444 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B19]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="44.5" calcext:value-type="float">
+      <text:p>44,500 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C19])" office:value-type="float" office:value="26.9662921348315" calcext:value-type="float">
+      <text:p>26,966</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A19]-[.D19])" office:value-type="float" office:value="0.033707865168541" calcext:value-type="float">
+      <text:p>0,034 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A19]+1" office:value-type="float" office:value="28" calcext:value-type="float">
+      <text:p>28,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A20])" office:value-type="float" office:value="42.8571428571429" calcext:value-type="float">
+      <text:p>42,857 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B20]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="42.75" calcext:value-type="float">
+      <text:p>42,750 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C20])" office:value-type="float" office:value="28.0701754385965" calcext:value-type="float">
+      <text:p>28,070</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A20]-[.D20])" office:value-type="float" office:value="0.0701754385964897" calcext:value-type="float">
+      <text:p>0,070 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A20]+1" office:value-type="float" office:value="29" calcext:value-type="float">
+      <text:p>29,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A21])" office:value-type="float" office:value="41.3793103448276" calcext:value-type="float">
+      <text:p>41,379 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B21]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="41.5" calcext:value-type="float">
+      <text:p>41,500 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C21])" office:value-type="float" office:value="28.9156626506024" calcext:value-type="float">
+      <text:p>28,916</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A21]-[.D21])" office:value-type="float" office:value="0.0843373493975896" calcext:value-type="float">
+      <text:p>0,084 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A21]+1" office:value-type="float" office:value="30" calcext:value-type="float">
+      <text:p>30,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A22])" office:value-type="float" office:value="40" calcext:value-type="float">
+      <text:p>40,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B22]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="40" calcext:value-type="float">
+      <text:p>40,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C22])" office:value-type="float" office:value="30" calcext:value-type="float">
+      <text:p>30,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A22]-[.D22])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A22]+1" office:value-type="float" office:value="31" calcext:value-type="float">
+      <text:p>31,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A23])" office:value-type="float" office:value="38.7096774193548" calcext:value-type="float">
+      <text:p>38,710 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B23]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="38.75" calcext:value-type="float">
+      <text:p>38,750 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C23])" office:value-type="float" office:value="30.9677419354839" calcext:value-type="float">
+      <text:p>30,968</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A23]-[.D23])" office:value-type="float" office:value="0.0322580645161281" calcext:value-type="float">
+      <text:p>0,032 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A23]+1" office:value-type="float" office:value="32" calcext:value-type="float">
+      <text:p>32,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A24])" office:value-type="float" office:value="37.5" calcext:value-type="float">
+      <text:p>37,500 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B24]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="37.5" calcext:value-type="float">
+      <text:p>37,500 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C24])" office:value-type="float" office:value="32" calcext:value-type="float">
+      <text:p>32,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A24]-[.D24])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A24]+1" office:value-type="float" office:value="33" calcext:value-type="float">
+      <text:p>33,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A25])" office:value-type="float" office:value="36.3636363636364" calcext:value-type="float">
+      <text:p>36,364 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B25]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="36.25" calcext:value-type="float">
+      <text:p>36,250 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C25])" office:value-type="float" office:value="33.1034482758621" calcext:value-type="float">
+      <text:p>33,103</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A25]-[.D25])" office:value-type="float" office:value="0.103448275862071" calcext:value-type="float">
+      <text:p>0,103 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A25]+1" office:value-type="float" office:value="34" calcext:value-type="float">
+      <text:p>34,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A26])" office:value-type="float" office:value="35.2941176470588" calcext:value-type="float">
+      <text:p>35,294 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B26]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="35.25" calcext:value-type="float">
+      <text:p>35,250 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C26])" office:value-type="float" office:value="34.0425531914894" calcext:value-type="float">
+      <text:p>34,043</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A26]-[.D26])" office:value-type="float" office:value="0.0425531914893611" calcext:value-type="float">
+      <text:p>0,043 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A26]+1" office:value-type="float" office:value="35" calcext:value-type="float">
+      <text:p>35,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A27])" office:value-type="float" office:value="34.2857142857143" calcext:value-type="float">
+      <text:p>34,286 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B27]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="34.25" calcext:value-type="float">
+      <text:p>34,250 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C27])" office:value-type="float" office:value="35.036496350365" calcext:value-type="float">
+      <text:p>35,036</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A27]-[.D27])" office:value-type="float" office:value="0.0364963503649633" calcext:value-type="float">
+      <text:p>0,036 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A27]+1" office:value-type="float" office:value="36" calcext:value-type="float">
+      <text:p>36,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A28])" office:value-type="float" office:value="33.3333333333333" calcext:value-type="float">
+      <text:p>33,333 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B28]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="33.25" calcext:value-type="float">
+      <text:p>33,250 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C28])" office:value-type="float" office:value="36.0902255639098" calcext:value-type="float">
+      <text:p>36,090</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A28]-[.D28])" office:value-type="float" office:value="0.090225563909776" calcext:value-type="float">
+      <text:p>0,090 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A28]+1" office:value-type="float" office:value="37" calcext:value-type="float">
+      <text:p>37,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A29])" office:value-type="float" office:value="32.4324324324324" calcext:value-type="float">
+      <text:p>32,432 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B29]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="32.5" calcext:value-type="float">
+      <text:p>32,500 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C29])" office:value-type="float" office:value="36.9230769230769" calcext:value-type="float">
+      <text:p>36,923</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A29]-[.D29])" office:value-type="float" office:value="0.0769230769230802" calcext:value-type="float">
+      <text:p>0,077 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A29]+1" office:value-type="float" office:value="38" calcext:value-type="float">
+      <text:p>38,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A30])" office:value-type="float" office:value="31.5789473684211" calcext:value-type="float">
+      <text:p>31,579 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B30]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="31.5" calcext:value-type="float">
+      <text:p>31,500 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C30])" office:value-type="float" office:value="38.0952380952381" calcext:value-type="float">
+      <text:p>38,095</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A30]-[.D30])" office:value-type="float" office:value="0.0952380952380949" calcext:value-type="float">
+      <text:p>0,095 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A30]+1" office:value-type="float" office:value="39" calcext:value-type="float">
+      <text:p>39,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A31])" office:value-type="float" office:value="30.7692307692308" calcext:value-type="float">
+      <text:p>30,769 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B31]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="30.75" calcext:value-type="float">
+      <text:p>30,750 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C31])" office:value-type="float" office:value="39.0243902439024" calcext:value-type="float">
+      <text:p>39,024</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A31]-[.D31])" office:value-type="float" office:value="0.0243902439024382" calcext:value-type="float">
+      <text:p>0,024 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:formula="of:=[.A31]+1" office:value-type="float" office:value="40" calcext:value-type="float">
+      <text:p>40,0</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.A32])" office:value-type="float" office:value="30" calcext:value-type="float">
+      <text:p>30,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ROUND([.B32]*([.$B$35]/1000); 0)/([.$B$35]/1000)" office:value-type="float" office:value="30" calcext:value-type="float">
+      <text:p>30,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=6000/(5*[.C32])" office:value-type="float" office:value="40" calcext:value-type="float">
+      <text:p>40,000</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=ABS([.A32]-[.D32])" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0,000 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1" table:number-rows-repeated="2">
+     <table:table-cell table:number-columns-repeated="1024"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>IRQ</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="float" office:value="4000" calcext:value-type="float">
+      <text:p>4000 Hz</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>max error</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=MAX([.E2:.E32])" office:value-type="float" office:value="0.103448275862071" calcext:value-type="float">
+      <text:p>0,103 ms</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>cycle time</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" table:formula="of:=1000000/[.B35]" office:value-type="float" office:value="250" calcext:value-type="float">
+      <text:p>250 μs</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1022"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce1"/>
+     <table:table-cell table:number-columns-repeated="1023"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1" table:number-rows-repeated="1048538">
+     <table:table-cell table:number-columns-repeated="1024"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:number-columns-repeated="1024"/>
+    </table:table-row>
+   </table:table>
+   <table:named-expressions/>
+  </office:spreadsheet>
+ </office:body>
+</office:document>
