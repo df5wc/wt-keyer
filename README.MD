@@ -200,6 +200,14 @@ montiert werden, wenn die vorderen Anschlüsse rechtwinklig abgebogen werden.
 Die Buchse sitzt dann aber ca. 2mm zu weit hinten.
 
 
+### Ich kann mir das nicht vorstellen. Wie sieht der Keyer denn aus?
+
+Hier sind Bilder vom aufgebauten Keyer und von einem kompletten Setup:
+
+![Keyer](docs/wt-keyer-01.jpg)
+![Setup](docs/wt-keyer-02.jpg)
+
+
 ### Wo gibt's den Keyer zu kaufen?
 
 Gar nicht (zumindest bei mir). Von mir gibt es
