@@ -184,10 +184,6 @@ ich darum, mich per Mail zu kontaktieren.
 
 ### Gibt es bekannte Probleme?
 
-Der Keyer erzeugt permanent einen sehr leisen Pfeifton im Lautsprecher
-unabhängig von der Einstellung des Lautstärkereglers. Ich vermute, dass es
-sich um die 4kHz Interrupt Taktfrequenz handelt und werde dem noch nachgehen.
-
 Beim Prototyp hatte ich teilweise Probleme mit Einstrahlungen durch das
 Handfunkgerät. Ich empfehle, ein abgeschirmtes Kabel für die Verbindung zum
 Funkgerät zu verwenden und evtl. die Ferritperlen auf dem Board gegen kleine
@@ -195,17 +191,9 @@ Induktivitäten auszutauschen und/oder an der Stelle noch mit 100pF
 abzublocken. Sobald mehr Erfahrungen vorliegen werde ich ggf. entsprechende
 Änderungen der Schaltung vornehmen.
 
-Der Footprint für die DIN Buchse auf dem Board ist falsch. Die Buchse kann
-montiert werden, wenn die vorderen Anschlüsse rechtwinklig abgebogen werden.
-Die Buchse sitzt dann aber ca. 2mm zu weit hinten.
-
-
-### Ich kann mir das nicht vorstellen. Wie sieht der Keyer denn aus?
-
-Hier sind Bilder vom aufgebauten Keyer und von einem kompletten Setup:
-
-![Keyer](docs/wt-keyer-01.jpg)
-![Setup](docs/wt-keyer-02.jpg)
+Bei der Prototyp Platine ist der Footprint für die DIN Buchse auf dem Board
+ist falsch. Die Buchse kann montiert werden, wenn die vorderen Anschlüsse
+rechtwinklig abgebogen werden. Die Buchse sitzt dann ca. 2mm zu weit hinten.
 
 
 ### Wo gibt's den Keyer zu kaufen?
