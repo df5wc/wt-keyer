@@ -37,7 +37,7 @@ Trimmer zur Einstellung von Lautstärke und Mikrofonpegel zu markieren.
 ### USB Buchse J6 / Stecker J1
 
 > [!IMPORTANT]
-> Die USB Buchse J6 ist ein SMD Bauteil. Wenn sie verwendet wird (siehe unten), dann muss sie **unbedingt** als erstes auf dem ansonsten leeren Board montiert werden. Danach sind alle 6 Anschlüsse mit dem Durchgangsprüfer auf Kurzschlüsse, insbesondere gegen Masse zu prüfen! Fehler die hier gemacht werden sind kaum noch zu korrigieren, sobald weitere Teile bestückt wurden! 
+> Die USB Buchse J6 ist ein SMD Bauteil. Wenn sie verwendet wird (siehe unten), dann muss sie **unbedingt** als erstes auf dem ansonsten leeren Board montiert werden. Danach sind alle 6 Anschlüsse mit dem Durchgangsprüfer auf Kurzschlüsse, insbesondere gegen Masse zu prüfen! Fehler die hier gemacht werden sind kaum noch zu korrigieren, sobald weitere Teile bestückt wurden!
 
 Wer Probleme hat, die Buchse zu löten, kann stattdessen die beim Prototypen
 verwendete Einbaubuchse verwenden. In diesem Fall werden die USB Buchse J6 und
@@ -185,9 +185,9 @@ Buchse anschließen und jedesmal prüfen, ob an den ICs 5V anliegen.
 
 Den AVR programmieren und beide ICs in die Fassungen einsetzen.
 
-> [!IMPORTANT]
+> [!WARNING]
 > Fuses nicht vergessen! Sonst ergeben sich seltsame Effekte.
-  
+
 Paddle und Kophörer anschliessen.
 
 Den Lautstärkeregler ganz nach links drehen.
@@ -205,7 +205,7 @@ müssten "Dahs" zu hören sein. Linkes Paddle produziert "Dits".
 
 ### Walkie-Talkie Anschluß
 
-> [!IMPORTANT]
+> [!NOTE]
 > Die folgende Information bezieht sich auf Funkgeräte mit Kenwood Anschluss.
 
 Stromversorgung abschalten, Anschlusskabel zum Funkgerät in das Board
@@ -239,10 +239,10 @@ der maximale Hub nicht überschritten wird.
 
 ![Einstellregler auf der Unterseite](docs/wt-keyer-05.jpg)
 
-> [!IMPORTANT]
+> [!TIP]
 > Der Pegel des Sendesignals ist aufgrund des Tiefpasses etwas von der Frequenz des gesendeten Tons abhängig. Wer es besonders gut machen will, stellt erst die gewünschte Tonfrequenz und dann den Mikrofonpegel ein. Da der verwendete Hub aber unter dem maximalen liegen sollte und übliche Funkgeräte das Eingangssignal limitieren sollten in der Praxis auch bei einer späteren Änderung der Tonhöhe keine Probleme auftreten.
 
-> [!IMPORTANT]
+> [!WARNING]
 > Auf V2 des Boards haben die beiden Trimmer bei Sicht auf die Unterseite die "falsche" Drehrichtung. Rechtsdrehung (im Uhrzeigersinn) ist Minimum.
 
 
