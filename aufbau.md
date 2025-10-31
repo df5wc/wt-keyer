@@ -172,7 +172,7 @@ Strom versorgt. Die Strombegrenzung ist auf 10-20mA einzustellen. Nach dem
 Einschalten darf kein messbarer Strom fliessen. Die Elektrolytkondensatoren
 dürfen nicht warm werden.
 
-An IC1 Pin 7 und IC2 Pin müssen 5V gegen Masse (die große Fläche auf dem
+An IC1 Pin 7 und IC2 Pin 6 müssen 5V gegen Masse (die große Fläche auf dem
 Board, abzugreifen z.B. an den Löchern für die Befestigungsschrauben) zu
 messen sein.
 
@@ -188,7 +188,7 @@ Den AVR programmieren und beide ICs in die Fassungen einsetzen.
 > [!WARNING]
 > Fuses nicht vergessen! Sonst ergeben sich seltsame Effekte.
 
-Paddle und Kophörer anschliessen.
+Paddle anschliessen.
 
 Den Lautstärkeregler ganz nach links drehen.
 
@@ -201,6 +201,9 @@ das ok ist, die Strombegrenzung auf 100mA erhöhen.
 
 Rechtes Paddle drücken und den Lautstärkeregler langsam nach rechts drehen. Es
 müssten "Dahs" zu hören sein. Linkes Paddle produziert "Dits".
+
+Kopfhörer anschliessen und Lautstärke zurück drehen. Testen ob der Kopfhörer
+funktioniert.
 
 
 ### Walkie-Talkie Anschluß
