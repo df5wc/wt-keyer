@@ -212,8 +212,8 @@ machen will habe ich aber nichts dagegen.
 Hier gibt es mehr Infos zum Aufbau:
 
 * ![Schaltplan](boards/wt-keyer-schematics.pdf)
-* ![Teileliste](docs/partslist.fods)
-* ![Aufbauhinweise](docs/aufbau.md)
+* ![Teileliste](boards/partslist.fods)
+* ![Aufbauhinweise](aufbau.md)
 
 
 ### Was gibt es sonst zu beachten?
