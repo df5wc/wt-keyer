@@ -212,7 +212,7 @@ machen will habe ich aber nichts dagegen.
 Hier gibt es mehr Infos zum Aufbau:
 
 * ![Schaltplan](boards/wt-keyer-schematics.pdf)
-* ![Teileliste](boards/partslist.fods)
+* ![Teileliste](boards/partslist.pdf)
 * ![Aufbauhinweise](aufbau.md)
 
 
