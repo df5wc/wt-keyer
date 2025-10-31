@@ -36,11 +36,8 @@ Trimmer zur Einstellung von Lautstärke und Mikrofonpegel zu markieren.
 
 ### USB Buchse J6 / Stecker J1
 
-[!IMPORTANT] Die USB Buchse J6 ist ein SMD Bauteil. Wenn sie verwendet wird
-(siehe unten), dann muss sie **unbedingt** als erstes auf dem ansonsten leeren
-Board montiert werden. Danach sind alle 6 Anschlüsse mit dem Durchgangsprüfer
-auf Kurzschlüsse, insbesondere gegen Masse zu prüfen! Fehler die hier gemacht
-werden sind kaum noch zu korrigieren, sobald weitere Teile bestückt wurden!
+> [!IMPORTANT]
+> Die USB Buchse J6 ist ein SMD Bauteil. Wenn sie verwendet wird (siehe unten), dann muss sie **unbedingt** als erstes auf dem ansonsten leeren Board montiert werden. Danach sind alle 6 Anschlüsse mit dem Durchgangsprüfer auf Kurzschlüsse, insbesondere gegen Masse zu prüfen! Fehler die hier gemacht werden sind kaum noch zu korrigieren, sobald weitere Teile bestückt wurden! 
 
 Wer Probleme hat, die Buchse zu löten, kann stattdessen die beim Prototypen
 verwendete Einbaubuchse verwenden. In diesem Fall werden die USB Buchse J6 und
@@ -63,11 +60,8 @@ Für die beiden ICs würde ich Fassungen empfehlen.
 
 ### Programmierstecker
 
-[!CAUTION] Der 6-polige Programmierstecker auf dem Board hat keine Markierung
-für Pin 1. Diese ist nur aus dem Platinenaufdruck ersichtlich, der aber durch
-den Einbau verdeckt wird. Deshalb ist es sinnvoll, Pin 1 des Steckers mit
-Edding o.ä. auf der Platine zu markieren, damit beim Programmieren der Stecker
-nicht falsch herum aufgesteckt wird.
+> [!CAUTION]
+> Der 6-polige Programmierstecker auf dem Board hat keine Markierung für Pin 1. Diese ist nur aus dem Platinenaufdruck ersichtlich, der aber durch den Einbau verdeckt wird. Deshalb ist es sinnvoll, Pin 1 des Steckers mit Edding o.ä. auf der Platine zu markieren, damit beim Programmieren der Stecker nicht falsch herum aufgesteckt wird.
 
 Falls der Stecker bei Reichelt bestellt wird, würde ich empfehlen, nicht das
 in der Teileliste angegebene, genau passende Teil "MPE 087-2-006" zu nehmen,
@@ -158,19 +152,16 @@ ein zusätzlicher Kondensator direkt an der USB Buchse schaffen.
 
 ### Tastenverlängerungen
 
-[!TIP] Die ausgedruckten "Verlängerungen" für die Drucktaster werden am besten
-erst gesteckt, wenn die Platine im Gehäuse montiert wurde. Wenn sie bereits
-vorher aufgesteckt werden, dann gestaltet sich das "Einfädeln" der Platine in
-die Gehäuseausbrüche etwas schwierig.
+> [!TIP]
+> Die ausgedruckten "Verlängerungen" für die Drucktaster werden am besten erst gesteckt, wenn die Platine im Gehäuse montiert wurde. Wenn sie bereits vorher aufgesteckt werden, dann gestaltet sich das "Einfädeln" der Platine in die Gehäuseausbrüche etwas schwierig.
 
 
 ## Inbetriebnahme
 
 ### Bestückung prüfen
 
-[!NOTE] Bitte vor der Inbetriebnahme nochmals die Elektrolytkondensatoren und
-den Transistor Q1 auf richtige Polung prüfen! Die ICs sind vorerst nicht zu
-stecken.
+> [!NOTE]
+> Bitte vor der Inbetriebnahme nochmals die Elektrolytkondensatoren und den Transistor Q1 auf richtige Polung prüfen! Die ICs sind vorerst nicht zu stecken.
 
 
 ### Stromversorgung prüfen
@@ -192,9 +183,11 @@ Buchse anschließen und jedesmal prüfen, ob an den ICs 5V anliegen.
 
 ### Erster Test
 
-Den AVR programmieren und beide ICs in die Fassungen einsetzen. [!IMPORTANT]
-Fuses nicht vergessen! Sonst ergeben sich seltsame Effekte.
+Den AVR programmieren und beide ICs in die Fassungen einsetzen.
 
+> [!IMPORTANT]
+> Fuses nicht vergessen! Sonst ergeben sich seltsame Effekte.
+  
 Paddle und Kophörer anschliessen.
 
 Den Lautstärkeregler ganz nach links drehen.
@@ -212,8 +205,8 @@ müssten "Dahs" zu hören sein. Linkes Paddle produziert "Dits".
 
 ### Walkie-Talkie Anschluß
 
-[!IMPORTANT] Die folgende Information bezieht sich auf Funkgeräte mit Kenwood
-Anschluss.
+> [!IMPORTANT]
+> Die folgende Information bezieht sich auf Funkgeräte mit Kenwood Anschluss.
 
 Stromversorgung abschalten, Anschlusskabel zum Funkgerät in das Board
 einstecken. Kein Funkgerät anschliessen.
@@ -246,16 +239,11 @@ der maximale Hub nicht überschritten wird.
 
 ![Einstellregler auf der Unterseite](docs/wt-keyer-05.jpg)
 
-[!IMPORTANT] Der Pegel des Sendesignals ist aufgrund des Tiefpasses etwas von
-der Frequenz des gesendeten Tons abhängig. Wer es besonders gut machen will,
-stellt erst die gewünschte Tonfrequenz und dann den Mikrofonpegel ein. Da der
-verwendete Hub aber unter dem maximalen liegen sollte und übliche Funkgeräte
-das Eingangssignal limitieren sollten in der Praxis auch bei einer späteren
-Änderung der Tonhöhe keine Probleme auftreten.
+> [!IMPORTANT]
+> Der Pegel des Sendesignals ist aufgrund des Tiefpasses etwas von der Frequenz des gesendeten Tons abhängig. Wer es besonders gut machen will, stellt erst die gewünschte Tonfrequenz und dann den Mikrofonpegel ein. Da der verwendete Hub aber unter dem maximalen liegen sollte und übliche Funkgeräte das Eingangssignal limitieren sollten in der Praxis auch bei einer späteren Änderung der Tonhöhe keine Probleme auftreten.
 
-[!IMPORTANT] Auf V2 des Boards haben die beiden Trimmer bei Sicht auf die
-Unterseite die "falsche" Drehrichtung. Rechtsdrehung (im Uhrzeigersinn) ist
-Minimum.
+> [!IMPORTANT]
+> Auf V2 des Boards haben die beiden Trimmer bei Sicht auf die Unterseite die "falsche" Drehrichtung. Rechtsdrehung (im Uhrzeigersinn) ist Minimum.
 
 
 ### Einbau und Abschluß
