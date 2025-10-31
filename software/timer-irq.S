@@ -1,5 +1,8 @@
 #include <avr/io.h>
 
+#include "buttondefs.h"
+#include "timerdefs.h"
+
 
 ;----------------------------------------------------------------------------
 ; Variables
@@ -8,13 +11,13 @@
 
 ; Timer
 .comm           Ticks, 2                ; Timer ticks
-Slow:           .byte   0               ; Helper for slow ticker
-InWpm:          .byte   0
-InPitch:        .byte   0
-InCmd:          .byte   0
+ButtonC:        .byte   0
+Button1:        .byte   0
+Button2:        .byte   0
 
 ; External variables defined in the C code
 .extern         Keys
+.extern         ChangedKeys
 .extern         PaddleSwapped
 .extern         Buttons
 .extern         ChangedButtons
@@ -61,69 +64,78 @@ TIMER2_COMP_vect:
         sts     Ticks, r24
         sts     Ticks+1, r25
 
-; Read the input port. Paddle inputs are handled first without debouncing.
+; Handle port input. Switches are read each millisecond and debounced for 8
+; reads meaning that the main program gets a changed value at most each 8ms.
+; Switches are active low. Debouncing is done by shifting the bits into a
+; byte variable. If it is zero, the switch has been read active for 8 cycles.
+; Paddle inputs are read each millisecond and aren't debounced.
 
-        in      r22, _SFR_IO_ADDR(PIND)
+#if IRQ_HZ != 4000
+#error "Code assumes IRQ_HZ=4000!"
+#endif
+
+        mov     r22, r24
+        andi    r22, 0x03               ; Check for 1ms tick
+        brne    IrqEnd
+
+; Code below is executed each millisecond
+
+        in      r22, _SFR_IO_ADDR(PIND) ; Read all inputs
+
+; Handle paddle inputs every ms
+
         com     r22                     ; Invert so 1 is active
         lds     r24, PaddleSwapped
-        cpi     r24, 0
-        breq    L2
+        tst     r24
+        breq    NoSwap
 
-        bst     r22, 1
+        bst     r22, 1                  ; Swap input bits 0 and 1
         lsl     r22
         bld     r22, 0
 
-L2:     andi    r22, 0x03               ; Mask relevant bits
-        sts     Keys, r22               ; Store them for the main program
+NoSwap: andi    r22, 0x03               ; Mask relevant bits
+        mov     r24, r22
+        lds     r23, ChangedKeys
+        eor     r22, r23
+        sts     Keys, r24               ; Store them for the main program
+        sts     ChangedKeys, r22        ; Remember which keys have changed
 
-; Handle port input and debouncing each millisecond. We do this only for the
-; switches, not for the paddle. Active keys read as zero on input. We shift
-; the bit for each input into its own variable and check if the active state
-; was read 8 times in a row. If so, we mark the switch as "pressed".
 
-        lds     r23, Slow
-        inc     r23
-        cpi     r23, 4                  ; 4*250us = 1ms
-        brne    nslow
+; Read and debounce the switches
 
-        in      r22, _SFR_IO_ADDR(PIND)
-        clr     r24                     ; Buttons are remembered here
+        in      r22, _SFR_IO_ADDR(PIND) ; Reread the inputs
+        clr     r24                     ; = BUTTON_NONE
 
-        lds     r23, InCmd
+        lds     r23, ButtonC
         rol     r22                     ; Bit 7
         ror     r23
-        sts     InCmd, r23
-        brne    L3
-        ori     r24, 0x80
+        sts     ButtonC, r23
+        brne    L1
+        ori     r24, BUTTON_C
 
-L3:     lds     r23, InPitch
+L1:     lds     r23, Button1
         rol     r22                     ; Bit 6
         ror     r23
-        sts     InPitch, r23
-        brne    L4
-        ori     r24, 0x40
+        sts     Button1, r23
+        brne    L2
+        ori     r24, BUTTON_1
 
-L4:     lds     r23, InWpm
+L2:     lds     r23, Button2
         rol     r22                     ; Bit 5
         ror     r23
-        sts     InWpm, r23
-        brne    L5
-        ori     r24, 0x20
+        sts     Button2, r23
+        brne    L3
+        ori     r24, BUTTON_2
 
-L5:     mov     r22, r24
+L3:     mov     r22, r24
         lds     r23, Buttons
         eor     r22, r23
         sts     ChangedButtons, r22
         sts     Buttons, r24
 
-; Reset the value for the slow ticker
-
-        clr     r23
-nslow:  sts     Slow, r23
-
 ; Restore registers and terminate the IRQ handler
 
-irq_end:
+IrqEnd:
         pop     r22
         out     _SFR_IO_ADDR(SREG), r22
         pop     r25

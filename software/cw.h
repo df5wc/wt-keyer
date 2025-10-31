@@ -62,6 +62,7 @@
 #define KEY_DIT                 0x01
 #define KEY_DAH                 0x02
 volatile uint8_t Keys;
+volatile uint8_t ChangedKeys;
 
 /* Current WPM setting and the element lengths */
 uint8_t Wpm;
@@ -98,8 +99,13 @@ typedef uint16_t CwChar;
 #define CWC_6(e1, e2, e3, e4, e5, e6) \
         (((e1) << 10) | ((e2) << 8) | ((e3) << 6) | ((e4) << 4) | ((e5) << 2) | (e6))
 
-/* Macros for some CW characters */
+/* Macros for some CW characters. The first two aren't real characters.
+ * CW_INV is used a read cw character as "invalid".
+ * CW_DIG is a placeholder used in the config routines when reading input
+ * that expects a number (like the Wnn command).
+ */
 #define CW_INV    0xFFFF
+#define CW_DIG    0xF000
 #define CW_DASH   CWC_6(EL_DAH, EL_DIT, EL_DIT, EL_DIT, EL_DIT, EL_DAH)
 #define CW_STROKE CWC_5(EL_DAH, EL_DIT, EL_DIT, EL_DAH, EL_DIT)
 #define CW_1      CWC_5(EL_DIT, EL_DAH, EL_DAH, EL_DAH, EL_DAH)
@@ -186,13 +192,13 @@ void PlayNumber(uint16_t Number, uint8_t Digits);
 int8_t IsCwDigit(CwChar C);
 /* If this is a CW digit, return its value, otherwise return -1 */
 
-static inline bool Dit(void)
+static inline bool Dit(uint8_t Keys)
 /* Check if dit was pressed */
 {
     return (Keys & KEY_DIT) != KEY_NONE;
 }
 
-static inline bool Dah(void)
+static inline bool Dah(uint8_t Keys)
 /* Check if dah was pressed */
 {
     return (Keys & KEY_DAH) != KEY_NONE;

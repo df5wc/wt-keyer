@@ -108,7 +108,7 @@ int main(void)
              */
             TxAbort();
             switch (B) {
-                case BUTTON_CMD:
+                case BUTTON_C:
                     AbortPlayCwMem();
                     Configuration();
                     break;
@@ -141,7 +141,7 @@ int main(void)
                 /* Allow aborting with the paddle or straight key. Beware: If
                  * a straight key is used, dah may be tied to ground.
                  */
-                if (Dit() || (!StraightKey && Dah())) {
+                if (Dit(Keys) || (!StraightKey && Dah(Keys))) {
                     AbortPlayCwMem();
                 } else {
                     PlayCwMem();

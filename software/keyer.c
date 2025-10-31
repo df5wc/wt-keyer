@@ -53,9 +53,9 @@
 
 
 
-/* Enable dash/dot memory */
-static uint8_t eeKeyerMemory EEMEM;
-bool KeyerMemory;
+/* Keyer flags */
+static uint8_t eeKeyerMode EEMEM;
+uint8_t KeyerMode;
 
 /* Keyer states */
 enum States {
@@ -73,6 +73,7 @@ static uint8_t State;
 /* Keyer variables */
 static uint8_t Element;
 static uint8_t NextElement;
+static bool PollDit;
 static Timer T;
 static uint16_t WaitTime;
 
@@ -91,11 +92,11 @@ void SetupKeyer(void)
 /* Module setup */
 {
     /* Read the settings from the eeprom */
-    KeyerMemory = EepromReadByte(&eeKeyerMemory, true);
+    KeyerMode = EepromReadByte(&eeKeyerMode, KM_DEFAULT);
 
     /* Initialize variables */
     TxBufClear(&TxBuf);
-    State = ST_SETUP;
+    State = StraightKey? ST_SK_OFF : ST_SETUP;
     CharBuf = 0x0000;
     CharComplete = false;
 }
@@ -105,7 +106,7 @@ void SetupKeyer(void)
 void SaveKeyer(void)
 /* Save keyer settings to eeprom */
 {
-    EepromWriteByte(&eeKeyerMemory, KeyerMemory);
+    EepromWriteByte(&eeKeyerMode, KeyerMode);
 }
 
 
@@ -158,111 +159,122 @@ bool Keyer(void)
  * GetKeyedChar().
  */
 {
-    do {
-        switch (State) {
+    /* Read the changed keys into a local variable to avoid having to read it
+     * multiple times.
+     */
+    uint8_t LChangedKeys = ChangedKeys;
+    uint8_t LKeys = Keys;
+    ChangedKeys = 0;
 
-            case ST_SETUP:
-                if (StraightKey) {
-                    State = ST_SK_OFF;
-                    continue;
-                } else {
-                    /* Initialize for ST_IDLE */
-                    T = StartTimer();
-                    State = ST_IDLE;
-                    /* FALLTHROUGH */
-                }
+    switch (State) {
 
-            case ST_IDLE:
-                /* If we have elements in the character buffer and we wait for
-                 * another dit length, we had a total of 2 dit lengths pause
-                 * since the last element and assume that the input character
-                 * is complete.
-                 */
-                if (CharBuf && ElapsedTime(T) >= ElementTime(EL_PAUSE)) {
-                    CharComplete = true;
-                }
-                /* Check for paddle key presses */
-                if (Keys & KEY_DIT) {
+        case ST_SETUP:
+            /* Initialize for ST_IDLE */
+Setup:      T = StartTimer();
+            State = ST_IDLE;
+            goto Idle;
+
+        case ST_IDLE:
+            /* If we have elements in the character buffer and we wait for
+             * another dit length, we had a total of 2 dit lengths pause
+             * since the last element and assume that the input character
+             * is complete.
+             */
+Idle:       if (CharBuf && ElapsedTime(T) >= ElementTime(EL_PAUSE)) {
+                CharComplete = true;
+            }
+            /* Check for paddle key presses */
+            PollDit = !PollDit;
+            if (PollDit) {
+                if (Dit(LKeys)) {
                     Element = EL_DIT;
                     State = ST_EL_START;
-                    continue;
-                } else if (Keys & KEY_DAH) {
+                    goto StartElement;
+                }
+            } else {
+                if (Dah(LKeys)) {
                     Element = EL_DAH;
                     State = ST_EL_START;
-                    continue;
+                    goto StartElement;
                 }
-                break;
+            }
+            break;
 
-            case ST_EL_START:
-                /* Start the element stored in "Element" */
-                SideToneStart();
-                TxBufPush(&TxBuf, StartTimer(), true);
-                T = StartTimer();
-                WaitTime = ElementTime(Element);
-                State = ST_EL;
-                NextElement = EL_PAUSE;
-                break;
+        case ST_EL_START:
+            /* Start the element stored in "Element" */
+StartElement:   SideToneStart();
+            T = StartTimer();
+            TxBufPush(&TxBuf, T, true);
+            WaitTime = ElementTime(Element);
+            State = ST_EL;
+            NextElement = EL_PAUSE;
+            break;
 
-            case ST_EL:
-                /* We are inside an element. */
-                if (KeyerMemory) {
-                    if (Dit() && Element == EL_DAH) {
+        case ST_EL:
+            /* We are inside an element */
+            if (KeyerMode == KM_IAMBIC_A) {
+                uint8_t KeyDown = (LChangedKeys & LKeys);
+                if (Element == EL_DAH && Dit(KeyDown)) {
+                    NextElement = EL_DIT;
+                    PollDit = true;         /* Check dah next time */
+                }
+            } else if (KeyerMode == KM_IAMBIC_B) {
+                if (Element == EL_DAH) {
+                    if (Dit(LKeys)) {
                         NextElement = EL_DIT;
-                    } else if (Dah() && Element == EL_DIT) {
+                    }
+                } else {
+                    if (Dah(LKeys)) {
                         NextElement = EL_DAH;
                     }
                 }
-                if (ElapsedTime(T) >= WaitTime) {
-                    AddElement(Element);
-                    SideToneDone();
-                    TxBufPush(&TxBuf, StartTimer(), false);
-                    T = StartTimer();
-                    WaitTime = ElementTime(EL_PAUSE);
-                    State = ST_PAUSE;
-                }
-                break;
+            }
+            if (ElapsedTime(T) >= WaitTime) {
+                AddElement(Element);
+                SideToneDone();
+                T = StartTimer();
+                TxBufPush(&TxBuf, T, false);
+                WaitTime = ElementTime(EL_PAUSE);
+                State = ST_PAUSE;
+            }
+            break;
 
-            case ST_PAUSE:
-                /* Pause after dit or dah */
-                if (Dit() && Element == EL_DAH) {
-                    NextElement = EL_DIT;
-                } else if (Dah() && Element == EL_DIT) {
-                    NextElement = EL_DAH;
+        case ST_PAUSE:
+            /* Pause after dit or dah */
+            if (ElapsedTime(T) >= WaitTime) {
+                Element = NextElement;
+                if (Element == EL_PAUSE) {
+                    State = ST_SETUP;
+                    goto Setup;
+                } else {
+                    WaitTime = ElementTime(Element);
+                    State = ST_EL_START;
+                    goto StartElement;
                 }
-                if (ElapsedTime(T) >= WaitTime) {
-                    Element = NextElement;
-                    if (Element == EL_PAUSE) {
-                        State = ST_SETUP;
-                    } else {
-                        WaitTime = ElementTime(Element);
-                        State = ST_EL_START;
-                        continue;
-                    }
-                }
-                break;
+            }
+            break;
 
-            case ST_SK_OFF:
-                /* Straight key and key open */
-                if (Keys & KEY_DIT) {
-                    /* Key was closed */
-                    SideToneStart();
-                    TxBufPush(&TxBuf, StartTimer(), true);
-                    State = ST_SK_ON;
-                }
-                break;
+        case ST_SK_OFF:
+            /* Straight key and key open */
+            if (LKeys & KEY_DIT) {
+                /* Key was closed */
+                SideToneStart();
+                TxBufPush(&TxBuf, StartTimer(), true);
+                State = ST_SK_ON;
+            }
+            break;
 
-            case ST_SK_ON:
-                /* Straight key and key closed */
-                if ((Keys & KEY_DIT) == 0) {
-                    /* Key was opened */
-                    SideToneDone();
-                    TxBufPush(&TxBuf, StartTimer(), false);
-                    State = ST_SK_OFF;
-                }
-                break;
+        case ST_SK_ON:
+            /* Straight key and key closed */
+            if ((LKeys & KEY_DIT) == 0) {
+                /* Key was opened */
+                SideToneDone();
+                TxBufPush(&TxBuf, StartTimer(), false);
+                State = ST_SK_OFF;
+            }
+            break;
 
-        }
-    } while (false);
+    }
 
     return CharComplete;
 }

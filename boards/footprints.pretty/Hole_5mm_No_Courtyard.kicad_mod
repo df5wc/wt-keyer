@@ -1,0 +1,90 @@
+(footprint "Hole_5mm_No_Courtyard"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Simple Hole 5mm")
+	(tags "hole")
+	(property "Reference" "REF**"
+		(at 0.01 -3.52 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "f31422a8-db9d-48f5-821e-e3c8e0943e11")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Hole_5mm_No_Courtyard"
+		(at -0.02 3.56 0)
+		(layer "F.Fab")
+		(uuid "38a41459-e68d-40d0-b6b8-0b0d32bbd49e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "34ab99c9-2313-47b0-a7a3-f7c12e915b75")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f78b89bf-4b51-43f4-9ed3-6fad2cb248b6")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr board_only exclude_from_pos_files exclude_from_bom)
+	(fp_circle
+		(center 0 -0.01)
+		(end 0 -2.61)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "b0176f94-7bae-4ae0-af33-ac81c1eeb1cf")
+	)
+	(fp_circle
+		(center 0 -0.01)
+		(end 0.01 -2.51)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "694c3916-bc9a-421f-a8ba-55b3dd19314b")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "5c0af4d6-35b8-4810-9509-21b9ce7d33e7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

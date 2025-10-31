@@ -40,6 +40,9 @@
 
 #include <stdint.h>
 
+/* wt-keyer */
+#include "buttondefs.h"
+
 
 
 /*****************************************************************************/
@@ -47,12 +50,6 @@
 /*****************************************************************************/
 
 
-
-/* Button definitions */
-#define BUTTON_NONE     0x00
-#define BUTTON_2        0x20
-#define BUTTON_1        0x40
-#define BUTTON_CMD      0x80
 
 /* Buttons */
 volatile uint8_t Buttons;

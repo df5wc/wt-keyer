@@ -52,8 +52,15 @@
 
 
 
-/* Enable dash/dot memory */
-bool KeyerMemory;
+/* Keyer mode constants */
+#define KM_IAMBIC       0x00    /* Plain iambic */
+#define KM_IAMBIC_A     0x01    /* Iambic type A */
+#define KM_IAMBIC_B     0x02    /* Iambic type B */
+
+#define KM_DEFAULT      KM_IAMBIC_B
+
+/* Keyer mode */
+uint8_t KeyerMode;
 
 
 

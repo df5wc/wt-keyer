@@ -66,7 +66,7 @@
 
 
 
-static uint8_t HandleDQuery(void)
+static uint8_t HandleDQuery(uint16_t Unused __attribute__((unused)))
 /* Handle the D? (tx delay query) command */
 {
     /* Convert the TX delay into milliseconds */
@@ -94,36 +94,30 @@ static uint8_t HandleDnnn(uint16_t Delay)
 
 
 
-static uint8_t HandleIA(void)
+static uint8_t HandleIA(uint16_t Unused __attribute__((unused)))
 /* Handle the IA (enable iabmic a) command */
 {
-    return CMD_OK;
-}
-
-
-
-static uint8_t HandleIB(void)
-/* Handle the IB (enable iabmic b) command */
-{
-    return CMD_OK;
-}
-
-
-
-static uint8_t HandleKMD(void)
-/* Handle the KMD (keyer memory disable) command */
-{
-    KeyerMemory = false;
+    KeyerMode = KM_IAMBIC_A;
     SaveKeyer();
     return CMD_OK;
 }
 
 
 
-static uint8_t HandleKME(void)
-/* Handle the KME (keyer memory enable) command */
+static uint8_t HandleIB(uint16_t Unused __attribute__((unused)))
+/* Handle the IB (enable iabmic b) command */
 {
-    KeyerMemory = true;
+    KeyerMode = KM_IAMBIC_B;
+    SaveKeyer();
+    return CMD_OK;
+}
+
+
+
+static uint8_t HandleIP(uint16_t Unused __attribute__((unused)))
+/* Handle the IP (enable plain iabmic) command */
+{
+    KeyerMode = KM_IAMBIC;
     SaveKeyer();
     return CMD_OK;
 }
@@ -137,7 +131,7 @@ static uint8_t HandleMQuery(uint8_t Nr)
     do {
         sleep_cpu();
         PlayCwMem();
-    } while (CwMemIsPlaying() && Buttons == BUTTON_CMD && Keys == KEY_NONE);
+    } while (CwMemIsPlaying() && Buttons == BUTTON_C && Keys == KEY_NONE);
     AbortPlayCwMem();
     AddWordPause();
     return CMD_OK;
@@ -145,7 +139,7 @@ static uint8_t HandleMQuery(uint8_t Nr)
 
 
 
-static uint8_t HandleMQuery1(void)
+static uint8_t HandleMQuery1(uint16_t Unused __attribute__((unused)))
 /* Handle the M?1 (query cw memory 1) command */
 {
     return HandleMQuery(CWMEM_1);
@@ -153,7 +147,7 @@ static uint8_t HandleMQuery1(void)
 
 
 
-static uint8_t HandleMQuery2(void)
+static uint8_t HandleMQuery2(uint16_t Unused __attribute__((unused)))
 /* Handle the M?2 (query cw memory 2) command */
 {
     return HandleMQuery(CWMEM_2);
@@ -165,15 +159,14 @@ static uint8_t HandleM(uint8_t Nr)
 /* Handle one of the "program memory" commands */
 {
     CwMemory M = { .Count = 0, .Buf = { 0 } };
+    TxBufferEntry Element = { .On = false };
     bool FirstWait = true;      /* Means: Wating for the first element */
     Timer EndTimer = StartTimer();
-    TxBufferEntry Element = { .On = false };
-    uint16_t DitTime = ElementTime(EL_DIT);
 
     ResetKeyer();
     while (true) {
         /* Releasing the Cmd button will abort memory programming */
-        if (Buttons != BUTTON_CMD) {
+        if (Buttons != BUTTON_C) {
             return CMD_UNKNOWN;
         }
 
@@ -225,6 +218,7 @@ static uint8_t HandleM(uint8_t Nr)
                  * add memory elements according to that time. Using 8 bit
                  * calculations is sufficient here.
                  */
+                uint16_t DitTime = ElementTime(EL_DIT);
                 uint8_t Dits = (ElapsedTime(Element.Time) + DitTime/2) / DitTime;
                 while (Dits) {
                     /* We can add 8 dit times per entry at maximum */
@@ -248,7 +242,7 @@ static uint8_t HandleM(uint8_t Nr)
 
 
 
-static uint8_t HandleM1(void)
+static uint8_t HandleM1(uint16_t Unused __attribute__((unused)))
 /* Handle the M1 (program cw memory 1) command */
 {
     return HandleM(CWMEM_1);
@@ -256,7 +250,7 @@ static uint8_t HandleM1(void)
 
 
 
-static uint8_t HandleM2(void)
+static uint8_t HandleM2(uint16_t Unused __attribute__((unused)))
 /* Handle the M2 (program cw memory 2) command */
 {
     return HandleM(CWMEM_2);
@@ -264,7 +258,7 @@ static uint8_t HandleM2(void)
 
 
 
-static uint8_t HandleOQuery(void)
+static uint8_t HandleOQuery(uint16_t Unused __attribute__((unused)))
 /* Handle the O? (tx off delay query) command */
 {
     AddWordPause();
@@ -274,13 +268,13 @@ static uint8_t HandleOQuery(void)
 
 
 
-static uint8_t HandleOnn(uint8_t Delay)
+static uint8_t HandleOnn(uint16_t Delay)
 /* Handle the Onn (set tx off delay) command */
 {
-    if (Delay < TXOFFDELAY_MIN || Delay > TXOFFDELAY_MAX) {
+    if ((uint8_t)Delay < TXOFFDELAY_MIN || (uint8_t)Delay > TXOFFDELAY_MAX) {
         return CMD_UNKNOWN;
     } else {
-        TxOffDelay = Delay;
+        TxOffDelay = (uint8_t)Delay;
         SaveRigCtrl();
         return CMD_OK;
     }
@@ -288,7 +282,7 @@ static uint8_t HandleOnn(uint8_t Delay)
 
 
 
-static uint8_t HandleSK(void)
+static uint8_t HandleSK(uint16_t Unused __attribute__((unused)))
 /* Handle the SK (straight key) command */
 {
     StraightKey = true;
@@ -298,7 +292,7 @@ static uint8_t HandleSK(void)
 
 
 
-static uint8_t HandleSWD(void)
+static uint8_t HandleSWD(uint16_t Unused __attribute__((unused)))
 /* Handle the SWD (disable paddle swap) command */
 {
     PaddleSwapped = false;
@@ -308,7 +302,7 @@ static uint8_t HandleSWD(void)
 
 
 
-static uint8_t HandleSWE(void)
+static uint8_t HandleSWE(uint16_t Unused __attribute__((unused)))
 /* Handle the SWE (enable paddle swap) command */
 {
     PaddleSwapped = true;
@@ -318,7 +312,7 @@ static uint8_t HandleSWE(void)
 
 
 
-static uint8_t HandleTQuery(void)
+static uint8_t HandleTQuery(uint16_t Unused __attribute__((unused)))
 /* Handle the T? (tone frequency query) command */
 {
     AddWordPause();
@@ -342,7 +336,7 @@ static uint8_t HandleTnnn(uint16_t Freq)
 
 
 
-static uint8_t HandleTMD(void)
+static uint8_t HandleTMD(uint16_t Unused __attribute__((unused)))
 /* Handle the TMD (training mode disable) command */
 {
     TrainingMode = false;
@@ -352,7 +346,7 @@ static uint8_t HandleTMD(void)
 
 
 
-static uint8_t HandleTME(void)
+static uint8_t HandleTME(uint16_t Unused __attribute__((unused)))
 /* Handle the TME (training mode enable) command */
 {
     TrainingMode = true;
@@ -362,7 +356,7 @@ static uint8_t HandleTME(void)
 
 
 
-static uint8_t HandleVQuery(void)
+static uint8_t HandleVQuery(uint16_t Unused __attribute__((unused)))
 /* Handle the V? (version query) command */
 {
     const char* V = SVNRev;
@@ -375,7 +369,7 @@ static uint8_t HandleVQuery(void)
             PlayCwChar(AsciiToCw(C));
         }
         /* Since the output is quite long, allow to abort it */
-        if ((Buttons & BUTTON_CMD) == 0) {
+        if ((Buttons & BUTTON_C) == 0) {
             return CMD_UNKNOWN;
         }
     }
@@ -385,7 +379,7 @@ static uint8_t HandleVQuery(void)
 
 
 
-static uint8_t HandleWQuery(void)
+static uint8_t HandleWQuery(uint16_t Unused __attribute__((unused)))
 /* Handle the W? (wpm query) command */
 {
     AddWordPause();
@@ -395,13 +389,13 @@ static uint8_t HandleWQuery(void)
 
 
 
-static uint8_t HandleWnn(uint8_t Wpm)
+static uint8_t HandleWnn(uint16_t Wpm)
 /* Handle the Wnn (set wpm) command */
 {
-    if (Wpm < WPM_MIN || Wpm > WPM_MAX) {
+    if ((uint8_t)Wpm < WPM_MIN || (uint8_t)Wpm > WPM_MAX) {
         return CMD_UNKNOWN;
     } else {
-        SetCwWpm(Wpm);
+        SetCwWpm((uint8_t)Wpm);
         SaveCw();
         return CMD_OK;
     }
@@ -415,10 +409,9 @@ static uint8_t HandleCmd(CwChar* Buf, uint8_t Len)
     /* Command list:
      * - D?             query the tx delay
      * - Dnnn           set tx delay in ms
-     * - KMD            disable keyer memory
-     * - KME            enable keyer memory
      * - IA             activate iambic A
      * - IB             activate iambic B
+     * - IP             activate plain iambic mode
      * - M?1            query cw memory 1
      * - M?2            query cw memory 2
      * - M1...          program cw memory 1
@@ -435,31 +428,39 @@ static uint8_t HandleCmd(CwChar* Buf, uint8_t Len)
      * - V?             query the software version number
      * - W?             query the keyer speed
      * - Wnn            set the keyer speed in wpm
+     *
+     * We use a completely table based approach to handle commands. Moving the
+     * commands that take a numeric argument out of the table saves some space,
+     * but the generic approach is shorter and nicer, even if the generated
+     * code is slightly larger than handling commands with arguments separately.
      */
     typedef struct {
         uint8_t Len;
-        CwChar  Cmd[3];
-        uint8_t (*Handler)(void);
+        CwChar  Cmd[4];
+        uint8_t (*Handler)(uint16_t);
     } CmdEntry;
     static const CmdEntry Cmds[] PROGMEM = {
-        { 2, { CW_D,  CW_QM         }, HandleDQuery     },
-        { 2, { CW_I,  CW_A          }, HandleIA         },
-        { 2, { CW_I,  CW_B          }, HandleIB         },
-        { 3, { CW_K,  CW_M,  CW_D   }, HandleKMD        },
-        { 3, { CW_K,  CW_M,  CW_E   }, HandleKME        },
-        { 3, { CW_M,  CW_QM, CW_1   }, HandleMQuery1    },
-        { 3, { CW_M,  CW_QM, CW_2   }, HandleMQuery2    },
-        { 2, { CW_M,  CW_1          }, HandleM1         },
-        { 2, { CW_M,  CW_2          }, HandleM2         },
-        { 2, { CW_O,  CW_QM         }, HandleOQuery     },
-        { 3, { CW_S,  CW_W,  CW_D   }, HandleSWD        },
-        { 3, { CW_S,  CW_W,  CW_E   }, HandleSWE        },
-        { 2, { CW_S,  CW_K          }, HandleSK         },
-        { 2, { CW_T,  CW_QM         }, HandleTQuery     },
-        { 3, { CW_T,  CW_M,  CW_D   }, HandleTMD        },
-        { 3, { CW_T,  CW_M,  CW_E   }, HandleTME        },
-        { 2, { CW_V,  CW_QM         }, HandleVQuery     },
-        { 2, { CW_W,  CW_QM         }, HandleWQuery     },
+        { 2, {  CW_D,   CW_QM,                  }, HandleDQuery     },
+        { 4, {  CW_D,   CW_DIG, CW_DIG, CW_DIG, }, HandleDnnn       },
+        { 2, {  CW_I,   CW_A,                   }, HandleIA         },
+        { 2, {  CW_I,   CW_B,                   }, HandleIB         },
+        { 2, {  CW_I,   CW_P,                   }, HandleIP         },
+        { 3, {  CW_M,   CW_QM,  CW_1,           }, HandleMQuery1    },
+        { 3, {  CW_M,   CW_QM,  CW_2,           }, HandleMQuery2    },
+        { 2, {  CW_M,   CW_1,                   }, HandleM1         },
+        { 2, {  CW_M,   CW_2,                   }, HandleM2         },
+        { 2, {  CW_O,   CW_QM,                  }, HandleOQuery     },
+        { 3, {  CW_O,   CW_DIG, CW_DIG,         }, HandleOnn        },
+        { 3, {  CW_S,   CW_W,   CW_D,           }, HandleSWD        },
+        { 3, {  CW_S,   CW_W,   CW_E,           }, HandleSWE        },
+        { 2, {  CW_S,   CW_K,                   }, HandleSK         },
+        { 2, {  CW_T,   CW_QM,                  }, HandleTQuery     },
+        { 4, {  CW_T,   CW_DIG, CW_DIG, CW_DIG, }, HandleTnnn       },
+        { 3, {  CW_T,   CW_M,   CW_D,           }, HandleTMD        },
+        { 3, {  CW_T,   CW_M,   CW_E,           }, HandleTME        },
+        { 2, {  CW_V,   CW_QM,                  }, HandleVQuery     },
+        { 2, {  CW_W,   CW_QM,                  }, HandleWQuery     },
+        { 3, {  CW_W,   CW_DIG, CW_DIG,         }, HandleWnn        },
     };
 
     /* Safety */
@@ -467,73 +468,41 @@ static uint8_t HandleCmd(CwChar* Buf, uint8_t Len)
         return CMD_MAYBE;
     }
 
-    /* First search in the table */
+    /* Search the table */
+    uint16_t Num = 0;
     uint8_t Ret = CMD_UNKNOWN;
     for (uint8_t I = 0; I < sizeof(Cmds)/sizeof(Cmds[0]); ++I) {
         const CmdEntry* E = &Cmds[I];
         uint8_t CmdLen = pgm_read_byte(&E->Len);
         if (Len <= CmdLen) {
             for (uint8_t L = 0; L < Len; ++L) {
-                if (Buf[L] != pgm_read_word(&E->Cmd[L])) {
+                CwChar C = pgm_read_word(&E->Cmd[L]);
+                CwChar B = Buf[L];
+                if (C == CW_DIG) {
+                    int8_t Val = IsCwDigit(B);
+                    if (Val < 0) {
+                        /* Digit required, but we don't have one */
+                        goto Next;
+                    }
+                    Num = Num * 10 + (uint8_t)Val;
+                } else if (B != C) {
                     goto Next;
                 }
             }
             if (Len == CmdLen) {
                 /* We have a full match - call the handler */
-                return ((uint8_t (*)(void))pgm_read_word(&E->Handler))();
+                return ((uint8_t (*)(uint16_t))pgm_read_word(&E->Handler))(Num);
             } else {
-                /* We have a partial match */
+                /* We have a partial match but keep searching since there may
+                 * be a better one.
+                 */
                 Ret = CMD_MAYBE;
             }
         }
 Next:   ;
     }
 
-    /* If we had a partial match, return that */
-    if (Ret != CMD_UNKNOWN) {
-        return Ret;
-    }
-
-    /* Otherwise the command is not in the table, so we must have one of Dnnn,
-     * Onn, Tnnn or Wnn.
-     */
-    if (Buf[0] != CW_D && Buf[0] != CW_O && Buf[0] != CW_T && Buf[0] != CW_W) {
-        return CMD_UNKNOWN;
-    }
-    if (Len == 1) {
-        return CMD_MAYBE;
-    }
-    int8_t DigA = IsCwDigit(Buf[1]);
-    if (DigA < 0) {
-        return CMD_UNKNOWN;
-    }
-    if (Len == 2) {
-        return CMD_MAYBE;
-    }
-    int8_t DigB = IsCwDigit(Buf[2]);
-    if (DigB < 0) {
-        return CMD_UNKNOWN;
-    }
-    if (Len == 3) {
-        uint8_t Val = DigA * 10 + DigB;
-        if (Buf[0] == CW_O) {
-            return HandleOnn(Val);
-        } else if (Buf[0] == CW_W) {
-            return HandleWnn(Val);
-        } else {
-            return CMD_MAYBE;
-        }
-    }
-    int8_t DigC = IsCwDigit(Buf[3]);
-    if (DigC < 0) {
-        return CMD_UNKNOWN;
-    }
-    uint16_t Arg = DigA * 100 + DigB * 10 + DigC;
-    if (Buf[0] == CW_D) {
-        return HandleDnnn(Arg);
-    } else {
-        return HandleTnnn(Arg);
-    }
+    return Ret;
 }
 
 
@@ -547,7 +516,7 @@ void Configuration(void)
 
     /* Read characters */
     ResetKeyer();
-    while (Buttons == BUTTON_CMD && !StraightKey) {
+    while (Buttons == BUTTON_C && !StraightKey) {
         if (Keyer()) {
             /* A decoded input character is waiting. Remember it. */
             Buf[CharCount++] = GetKeyedChar();

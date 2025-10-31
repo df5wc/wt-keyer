@@ -2,7 +2,7 @@
 /*                                                                           */
 /*                                  timer.c                                  */
 /*                                                                           */
-/*               Timer definitions for the walkie-talkie keyer               */
+/*                Timer functions for the walkie-talkie keyer                */
 /*                                                                           */
 /*                                                                           */
 /*                                                                           */

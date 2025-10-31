@@ -444,7 +444,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -593,7 +593,7 @@
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_field": "Datasheet"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -639,6 +639,10 @@
     [
       "371fa5ac-71e1-47a5-8a33-a872857ac290",
       "Root"
+    ],
+    [
+      "4a9ff376-1a7a-4599-a542-04dc260dba36",
+      "Supplementary"
     ]
   ],
   "text_variables": {}

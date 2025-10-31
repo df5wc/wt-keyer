@@ -2,7 +2,7 @@
 /*                                                                           */
 /*                                  timer.h                                  */
 /*                                                                           */
-/*               Timer definitions for the walkie-talkie keyer               */
+/*                Timer functions for the walkie-talkie keyer                */
 /*                                                                           */
 /*                                                                           */
 /*                                                                           */
@@ -40,6 +40,9 @@
 
 #include <stdint.h>
 
+/* wt-keyer */
+#include "timerdefs.h"
+
 
 
 /*****************************************************************************/
@@ -50,12 +53,6 @@
 
 /* Software timer types */
 typedef uint16_t Timer;
-
-/* Clock rate of the CPU */
-#define CLOCK_HZ        8000000UL       /* 8 MHz */
-
-/* Clock rate of the software timer. See wpm-calculations.fods. */
-#define IRQ_HZ          4000U
 
 /* Define for times. Decimal places must be in range 0..999 */
 #if ((IRQ_HZ % 1000UL) != 0)
@@ -107,7 +104,6 @@ void Sleep(uint16_t Ticks);
 
 /* End of timer.h */
 #endif
-
 
 
 

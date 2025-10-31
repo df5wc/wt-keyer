@@ -79,26 +79,27 @@ Danach kann im Prinzip schon losgemorst werden. Zur Einstellung gibt es die
 Taste &lt;Cmd&gt;. Wenn sie gedrückt und gehalten wird, können dem Keyer
 Kommandos in CW gegeben werden. Hier ist die Liste der Kommandos:
 
-* D?             - query the tx delay
-* Dnnn           - set tx delay in ms
-* KMD            - disable keyer memory
-* KME            - enable keyer memory
-* M?1            - query cw memory 1
-* M?2            - query cw memory 2
-* M1...          - program cw memory 1
-* M2...          - program cw memory 2
-* O?             - query tx off delay in dits
-* Onn            - set tx off delay in dits
-* SK             - switch to straight key
-* SWD            - disable paddle swap
-* SWE            - enable paddle swap
-* T?             - query the tone frequency
-* TMD            - disable training mode (TX)
-* TME            - enable training mode (no TX)
-* Tnnn           - set a tone frequency
-* V?             - query the software version number
-* W?             - query the keyer speed
-* Wnn            - set the keyer speed in wpm
+* D?             query the tx delay
+* Dnnn           set tx delay in ms
+* IA             activate iambic A
+* IB             activate iambic B
+* IP             activate plain iambic mode
+* M?1            query cw memory 1
+* M?2            query cw memory 2
+* M1...          program cw memory 1
+* M2...          program cw memory 2
+* O?             query tx off delay in dits
+* Onn            set tx off delay in dits
+* SK             switch to straight key
+* SWD            disable paddle swap
+* SWE            enable paddle swap
+* T?             query the tone frequency
+* TMD            disable training mode (TX)
+* TME            enable training mode (no TX)
+* Tnnn           set a tone frequency
+* V?             query the software version number
+* W?             query the keyer speed
+* Wnn            set the keyer speed in wpm
 
 Die Kommandos werden jeweils mit einem hohen Ton quittiert, wenn sie
 erfolgreich ausgeführt wurden. Bei einem Fehler (oder einem unbekannten
@@ -110,7 +111,7 @@ dem nächsten Start genau so wieder zur Verfügung.
 
 ### Wie funktioniert das mit den CW Speichern?
 
-Der Keyer verfügt über zwei Speicherplätze für Nachrichten in Morseocde. Diese
+Der Keyer verfügt über zwei Speicherplätze für Nachrichten in Morsecode. Diese
 können über die Kommandos "M1" und "M2" programmiert und mit den Tasten
 &lt;1&gt; und &lt;2&gt; abgerufen werden. Während ein Speichertext ausgegeben
 wird, kann mittels Druck auf einen beliebigen Knopf oder Betätigung der
@@ -157,23 +158,6 @@ die Keyer Hardware erfolgen soll, dann ist der entsprechende Eingang des
 Keyers am DIN Stecker auf Masse zu legen.
 
 
-### Was ist mit Iambic A/B?
-
-Daran rätsle ich auch herum. Der Keyer implementiert Iambic A mit optionalem
-Punkt/Strich-Speicher. Ich selber benutze eigentlich immer Iambic B an anderen
-Funkgeräten, habe aber mit dem Keyer überhaupt kein Problem, obwohl die
-Software definitiv Iambic A implementiert. Ich werde das Thema noch etwas
-erforschen, vermute aber, dass der Unterschied zwischen Iambic A und B
-normalerweise nicht zum Tragen kommt und dass der Speicher viel entscheidender
-ist.
-
-Falls ich feststellen sollte, dass es hier doch große Unterschiede gibt, werde
-ich die Software entsprechend erweitern. Die Kommandos "IA" und "IB" sind
-bereits für eine evtl. erfolgende Änderung der Software vorgesehen und werden
-derzeit immer mit "Erfolg" quittiert. Für Rückmeldungen zum Thema (bitte kein
-theoretisieren, sondern tatsächliche Tests mit dem Keyer!) bin ich dankbar.
-
-
 ### Ich habe ein Problem, wieso kann ich kein Issue anlegen?
 
 Das Repository auf Github dient nur der Veröffentlichung, nicht der
@@ -191,9 +175,17 @@ Induktivitäten auszutauschen und/oder an der Stelle noch mit 100pF
 abzublocken. Sobald mehr Erfahrungen vorliegen werde ich ggf. entsprechende
 Änderungen der Schaltung vornehmen.
 
-Bei der Prototyp Platine ist der Footprint für die DIN Buchse auf dem Board
-ist falsch. Die Buchse kann montiert werden, wenn die vorderen Anschlüsse
-rechtwinklig abgebogen werden. Die Buchse sitzt dann ca. 2mm zu weit hinten.
+Die beiden Trimmer RV1 und RV2 werden von der Unterseite des Boards aus
+bedient und haben deshalb die falsche Drehrichtung: Rechtsanschlag ist
+Minimum, Linksanschlag ist Maximum.
+
+
+### Ich kann mir das nicht vorstellen. Wie sieht der Keyer denn aus?
+
+Hier sind Bilder vom aufgebauten Keyer und von einem kompletten Setup:
+
+![Keyer](docs/wt-keyer-01.jpg)
+![Setup](docs/wt-keyer-02.jpg)
 
 
 ### Wo gibt's den Keyer zu kaufen?
@@ -213,6 +205,15 @@ Wenn genug Interesse besteht, kann ich nochmals einen Satz Platinen fertigen
 lassen und - solange übrig sind - welche abgeben. Ggf. mit programmierter AVR
 CPU. Ich vertreibe aber keine Fertiggeräte oder Bausätze. Falls das jemand
 machen will habe ich aber nichts dagegen.
+
+
+### Ok, ich will bauen! Wie lege ich los?
+
+Hier gibt es mehr Infos zum Aufbau:
+
+* ![Schaltplan](boards/wt-keyer-schematics.pdf)
+* ![Teileliste](docs/partslist.fods)
+* ![Aufbauhinweise](docs/aufbau.md)
 
 
 ### Was gibt es sonst zu beachten?

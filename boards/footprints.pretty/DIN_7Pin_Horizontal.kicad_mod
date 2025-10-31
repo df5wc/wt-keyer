@@ -1,10 +1,10 @@
-(footprint "DIN_5Pin_Horizontal"
+(footprint "DIN_7Pin_Horizontal"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
-		(at -0.6 -6.6 0)
+		(at 0 -6.6 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "87336cf8-b9ef-45ce-9555-3c2322b677dc")
@@ -15,8 +15,8 @@
 			)
 		)
 	)
-	(property "Value" "DIN_5Pin_Horizontal"
-		(at 0 -4.1 0)
+	(property "Value" "DIN_7Pin_Horizontal"
+		(at 0 -4.2 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "2f60b073-ccec-484d-9dc0-ab001a963309")
@@ -307,6 +307,22 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "a344c2ed-f373-48bc-8aa8-e17afa06cd1b")
+	)
+	(pad "6" thru_hole circle
+		(at 7.5 5)
+		(size 2.4 2.4)
+		(drill 1.4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6c001305-f324-41ee-bf91-4576168ff874")
+	)
+	(pad "7" thru_hole circle
+		(at -7.5 5)
+		(size 2.4 2.4)
+		(drill 1.4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "008961a7-ed5d-4ae5-bb4e-57cc1f10e19e")
 	)
 	(embedded_fonts no)
 )

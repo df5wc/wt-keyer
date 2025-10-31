@@ -59,6 +59,7 @@
 
 /* Inputs */
 volatile uint8_t Keys;
+volatile uint8_t ChangedKeys;
 
 /* Current WPM setting and it's dit and dah lengths */
 static uint8_t  eeWpm EEMEM;
@@ -171,8 +172,8 @@ void SetupCw(void)
      * the device comes up. A straight key uses a mono instead of a stereo
      * jack which shortens dah to ground.
      */
-    sleep_cpu();
-    if (Dah()) {
+    Sleep(10);
+    if (Dah(Keys)) {
         StraightKey = true;
         PaddleSwapped = false;  /* Set but don't save */
     }

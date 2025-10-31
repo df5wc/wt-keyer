@@ -1,3 +1,14 @@
+/* Which object to generate:
+ * 0 = upper part with usb breakout on the pcb
+ * 1 = upper part with separate usb breakout
+ * 2 = lower part
+ * 3 = button prolongation
+ * 4 = button label "C"
+ * 5 = button label "1"
+ * 6 = button label "2"
+ */
+what = 0;
+
 /* Inner width of the case */
 wcase = 70;
 
@@ -5,12 +16,12 @@ wcase = 70;
 lcase = 90;
 
 /* Height of the board support: Speaker + components */
-hpcbsupport = 20.5 + 14;
+hpcbsupport = 20.5 + 11;
 
-/* Inner height of the case. 
- * Speaker + components + board + trimmer + safety. 
+/* Inner height of the case.
+ * Speaker + components + board + free space.
  */
-hcase = hpcbsupport + 1.6 + 7 + 1;
+hcase = hpcbsupport + 1.6 + 2;
 
 /* Height of the lid support */
 hlidsupport = hcase;
@@ -19,7 +30,7 @@ hlidsupport = hcase;
 gap = 0.4;
 
 /* Radius for case edges */
-rcase = 1.0;
+rcase = 1.5;
 
 /* Speaker diameter */
 dspeaker = 66;
@@ -53,35 +64,46 @@ $fn  =  100;
 eps  =  0.005;
 
 /* Trimmer position #1 */
-xtrimmer1 = 55.7;
-ytrimmer1 = 57.8;
+xtrimmer1 = 64.5;
+ytrimmer1 = 58.0;
 
 /* Trimmer position #2 */
-xtrimmer2 = 64.3;
-ytrimmer2 = 25.4;
+xtrimmer2 = 64.5;
+ytrimmer2 = 25.0;
 
 /* Button position #1 */
-xbutton1 = 18;
+xbutton1 = 20.5;
 ybutton1 = 44;
 
 /* Button position #2 */
-xbutton2 = 18;
+xbutton2 = 20.5;
 ybutton2 = 35;
 
 /* Button position #3 */
-xbutton3 = 18;
+xbutton3 = 20.5;
 ybutton3 = 26;
 
 /* Height of button prolongation. Switches are 9mm high, 5mm is overlap. */
 hbutton = hpcbsupport + wall - 9.0 + 6.0;
 
 /* Paddle jack position */
-xpaddle = 14.6425;
+xpaddle = 13.0;
 ypaddle = hpcbsupport - 3.05;
 paddlehole = 6.5;
 
+/* Headphone jack position */
+xheadphones = 28.2;
+yheadphones = hpcbsupport - 3.05;
+headphoneshole = 6.5;
+
+/* USB jack position */
+xusb = 41.6;
+yusb = hpcbsupport - 0.0;
+usbholew = 9.0;
+usbholeh = 4.0;
+
 /* Volume control position */
-xvolume = 54.135;
+xvolume = 56.0;
 yvolume = hpcbsupport - 10.0;
 volumehole = 7.0;
 
@@ -133,6 +155,12 @@ module label(text, ha = "center", va = "center") {
 }
 
 module usb_breakout() {
+    translate([-usbholew/2, -usbholeh/2, -eps]) {
+        roundedplate(usbholew, usbholeh, wall+2*eps, 1.0);
+    }
+}
+
+module usb_panel_breakout() {
     l = 9;
     h = 4;
     w = 15.8;
@@ -148,47 +176,52 @@ module usb_breakout() {
     }
 }
 
-module lidsupport(rot) {
-    h = hlidsupport + eps;
+module support() {
     lscrew = 12.0;
-    rotate([0, 0, rot]) {
-        translate([-3 - eps, -3 - eps, 0]) {
-            difference() {
-                union() {
-                    roundedplate(6 + 2*eps, 6 + 2*eps, h);
-                    cube([6 + 1.5*eps, 1, h]);
-                    cube([1.5, 6 + 2*eps, h]);
+    difference() {
+        union() {
+            translate([0, 0, -eps]) {
+                linear_extrude(height = hpcbsupport + eps) {
+                    polygon(points=[
+                        [-eps, -eps],
+                        [-eps, 12 + gap],
+                        [6 + gap, 12 + gap],
+                        [6 + gap, -eps],
+                    ]);
                 }
-                translate([3.0 + eps, 3.0 + eps, h - lscrew]) {
-                    cylinder_outer(lscrew + eps, mountinghole/2, mountinghole/2);
+            }
+            intersection() {
+                translate([-rcase + gap - eps, -rcase -eps, hpcbsupport - eps]) {
+                    roundedplate(6 + rcase + eps, 6 + rcase + eps, hlidsupport - hpcbsupport + 0*eps);
+                }
+                translate([- eps, -eps, hpcbsupport - eps]) {
+                    cube([6 + gap + eps, 6 + eps, hlidsupport - hpcbsupport + 2*eps]);
                 }
             }
         }
-    }
-}
-
-module pcbsupport(rot) {
-    h = hpcbsupport + eps;
-    lscrew = 12.0;
-    rotate([0, 0, rot]) {
-        translate([-3 - eps, -3 - eps, 0]) {
-            difference() {
-                union() {
-                    cube([7 + 2*eps, 7 + 2*eps, h]);
-                }
-                translate([4.0 + eps, 4.0 + eps, h - lscrew]) {
-                    cylinder_outer(lscrew + eps, mountinghole/2, mountinghole/2);
-                }
-            }
+        translate([3.0 + eps, 3.0 + eps, hlidsupport - lscrew]) {
+            cylinder_outer(lscrew + eps, mountinghole/2, mountinghole/2);
+        }
+        translate([3.0 + gap + eps, 9.0 + gap + eps, hpcbsupport - lscrew]) {
+            cylinder_outer(lscrew + eps, mountinghole/2, mountinghole/2);
         }
     }
 }
 
 module speakerhook() {
     translate([-1.5, 2, 0]) {
-        rotate([0, 270, 180]) 
+        rotate([0, 270, 180])
         linear_extrude(height = 3) {
-            polygon(points=[[0, 0], [0, 2], [3.0, 2], [4.0, 4], [4.0, 0]]);
+            /* The polygon might need a height adjustment depending
+             * on the speaker and the print resolution.
+             */
+            polygon(points=[
+                [0.0, 0.0], 
+                [0.0, 2.0], 
+                [1.9, 2.0], 
+                [3.3, 4.0], 
+                [3.3, 0.0]
+            ]);
         }
     }
 }
@@ -205,18 +238,18 @@ module speakerscrewholder() {
 }
 
 module speakerholders() {
-    rotate([0, 0, 285]) {
-        translate([0, dspeaker / 2 + 1, 0]) {
+    rotate([0, 0, 275]) {
+        translate([0, dspeaker / 2, 0]) {
             speakerhook();
         }
     }
-    rotate([0, 0, 155]) {
-        translate([0, dspeaker / 2 + 1, 0]) {
+    rotate([0, 0, 145]) {
+        translate([0, dspeaker / 2, 0]) {
             speakerhook();
         }
     }
-    rotate([0, 0, 45]) {
-        translate([0, 10, 0]) {
+    rotate([0, 0, 35]) {
+        translate([0, 9, 0]) {
             translate([0, dspeaker / 2, 0]) {
                 speakerscrewholder();
             }
@@ -227,17 +260,25 @@ module speakerholders() {
 module speakerholes() {
     for (angle = [0:11.25:360]) {
         rotate([0, 0, angle]) {
-            translate([29, 0, 0]) {
-                cylinder(wall + 2*eps, r1=1, r2=1);
+            if (dspeaker/2 > 29+2) {
+                translate([29, 0, 0]) {
+                    cylinder(wall + 2*eps, r1=1, r2=1);
+                }
             }
-            translate([25, 0, 0]) {
-                cylinder(wall + 2*eps, r1=1, r2=1);
+            if (dspeaker/2 > 25+2) {
+                translate([25, 0, 0]) {
+                    cylinder(wall + 2*eps, r1=1, r2=1);
+                }
             }
-            translate([21, 0, 0]) {
-                cylinder(wall + 2*eps, r1=1, r2=1);
+            if (dspeaker/2 > 21+2) {
+                translate([21, 0, 0]) {
+                    cylinder(wall + 2*eps, r1=1, r2=1);
+                }
             }
-            translate([17, 0, 0]) {
-                cylinder(wall + 2*eps, r1=1, r2=1);
+            if (dspeaker/2 > 17+2) {
+                translate([17, 0, 0]) {
+                    cylinder(wall + 2*eps, r1=1, r2=1);
+                }
             }
         }
     }
@@ -281,72 +322,83 @@ module upper() {
             roundedplate(lcase + 2*gap + 2*groove, wcase + 2*gap + 2*groove, wall + eps);
         }
         /* Sound holes for the speaker */
-        translate([lcase + wall + gap - dspeaker/2, wcase/2 + gap + wall, 0]) {
+        translate([lcase + wall + gap - 33, wcase/2 + gap + wall, 0]) {
             speakerholes();
         }
         /* Button holes */
-        translate([wall + gap + xbutton1, wall + gap + ybutton1, -eps]) {
-            cylinder_outer(wall + 2*eps, buttonhole/2, buttonhole/2);
+        translate([wall + gap + xbutton1 - buttonhole/2, wall + gap + ybutton1 - buttonhole/2, -eps]) {
+            cube([buttonhole, buttonhole, wall + 2*eps]);
         }
-        translate([wall + gap + xbutton2, wall + gap + ybutton2, -eps]) {
-            cylinder_outer(wall + 2*eps, buttonhole/2, buttonhole/2);
+        translate([wall + gap + xbutton2 - buttonhole/2, wall + gap + ybutton2 - buttonhole/2, -eps]) {
+            cube([buttonhole, buttonhole, wall + 2*eps]);
         }
-        translate([wall + gap + xbutton3, wall + gap + ybutton3, -eps]) {
-            cylinder_outer(wall + 2*eps, buttonhole/2, buttonhole/2);
+        translate([wall + gap + xbutton3 - buttonhole/2, wall + gap + ybutton3 - buttonhole/2, -eps]) {
+            cube([buttonhole, buttonhole, wall + 2*eps]);
         }
         /* Hole for paddle socket */
         translate([-eps, wall + gap + xpaddle, wall + ypaddle]) {
             rotate([90, 90, 90]) {
                 cylinder_outer(wall + 2*eps, paddlehole/2, paddlehole/2);
-            }            
-        }   
+            }
+        }
+        /* Hole for headphone socket */
+        translate([-eps, wall + gap + xheadphones, wall + yheadphones]) {
+            rotate([90, 90, 90]) {
+                cylinder_outer(wall + 2*eps, headphoneshole/2, headphoneshole/2);
+            }
+        }
         /* Hole for volume control */
         translate([-eps, wall + gap + xvolume, wall + yvolume]) {
             rotate([90, 90, 90]) {
                 cylinder_outer(wall + 2*eps, volumehole/2, volumehole/2);
-            }            
-        }   
+            }
+        }
         /* Hole for rig control socket */
         translate([lcase + wall + 2*gap - eps, wall + gap + xrigctrl, wall + yrigctrl]) {
             rotate([90, 90, 90]) {
                 cylinder_outer(wall + 2*eps, rigctrlhole/2, rigctrlhole/2);
-            }            
-        }   
-        /* USB breakout */
-        translate([0, wall + gap + wcase/2, wall + 10]) {
-            rotate([90, 0, 90]) {
-                usb_breakout();
-            }            
-        }   
+            }
+        }
+        /* Breakout for usb on the pcb */
+        if (what == 0) {
+            translate([0, wall + gap + xusb, wall + yusb - usbholeh/2]) {
+                rotate([90, 0, 90]) {
+                    usb_breakout();
+                }
+            }
+        }
+        /* Breakout for separate usb socket */
+        if (what == 1) {
+            translate([0, wall + gap + wcase/2, wall + 10]) {
+                rotate([90, 0, 90]) {
+                    usb_panel_breakout();
+                }
+            }
+        }
     }
-    /* Mounting support for the lid */
-    translate([wall + 3 - eps, wall + 3 - eps, wall-eps]) {
-        lidsupport(0);
+    /* PCB and lid supports */
+    translate([wall, wall, wall]) {
+        mirror([-1, 1, 0]) {
+            support();
+        }
     }
-    translate([wall + lcase + 2*gap - 3 + eps, wall + 3 - eps, wall-eps]) {
-        lidsupport(90);
+    translate([wall + lcase + 2*gap, wall, wall]) {
+        rotate([0, 0, 90]) {
+            support();
+        }
     }
-    translate([wall + lcase + 2*gap - 3 + eps, wall + wcase +2*gap - 3 + eps, wall-eps]) {
-        lidsupport(180);
+    translate([wall + lcase + 2*gap, wall + wcase + 2*gap, wall]) {
+        mirror([1, 1, 0]) {
+            support();
+        }
     }
-    translate([wall + 3 - eps, wall + wcase +2*gap - 3 + eps, wall-eps]) {
-        lidsupport(270);
-    }
-    /* Mounting support for the board */
-    translate([wall + 6 + 3 - eps, wall + 3 - eps, wall-eps]) {
-        pcbsupport(0);
-    }
-    translate([wall + lcase +2*gap - 9 + eps, wall + 3 - eps, wall-eps]) {
-        pcbsupport(90);
-    }
-    translate([wall + lcase +2*gap - 9 + eps, wall + wcase + 2*gap - 3 + eps, wall-eps]) {
-        pcbsupport(180);
-    }
-    translate([wall + 9 - eps, wall + wcase +2*gap - 3 + eps, wall-eps]) {
-        pcbsupport(270);
+    translate([wall, wall + wcase + 2*gap, wall]) {
+        rotate([0, 0, 270]) {
+            support();
+        }
     }
     /* Holders for the speaker */
-    translate([lcase + wall + gap - dspeaker/2, wcase/2 + gap + wall, wall - eps]) {
+    translate([lcase + wall + gap - 33, wcase/2 + gap + wall, wall - eps]) {
         rotate([0, 0, 90]) {
             speakerholders();
         }
@@ -370,22 +422,22 @@ module lower() {
         translate([3 + groove, 3 + groove, -eps]) {
             cylinder_outer(wall+2*eps, lidhole/2, lidhole/2);
         }
-        translate([lcase + gap + groove - 3, 3 + gap + groove, -eps]) {
+        translate([lcase + 2*gap + groove - 3, 3 + groove, -eps]) {
             cylinder_outer(wall+2*eps, lidhole/2, lidhole/2);
         }
-        translate([3 + groove, wcase + gap + groove - 3, -eps]) {
+        translate([3 + groove, wcase + 2*gap + groove - 3, -eps]) {
             cylinder_outer(wall+2*eps, lidhole/2, lidhole/2);
         }
-        translate([lcase + gap + groove - 3, wcase + gap + groove - 3, -eps]) {
+        translate([lcase + 2*gap + groove - 3, wcase + 2*gap + groove - 3, -eps]) {
             cylinder_outer(wall+2*eps, lidhole/2, lidhole/2);
         }
         /* Trimmer holes */
         translate([groove + xtrimmer1, groove + ytrimmer1, -eps]) {
             cylinder_outer(wall + 2*eps, trimmerhole/2, trimmerhole/2);
-        }   
+        }
         translate([groove + xtrimmer2, groove + ytrimmer2, -eps]) {
             cylinder_outer(wall + 2*eps, trimmerhole/2, trimmerhole/2);
-        }   
+        }
     }
     /* Feet */
     translate([6 + groove + dfoot/2, groove + dfoot/2, wall-eps]) {
@@ -402,30 +454,39 @@ module lower() {
     }
 }
 
-module button(text) {
-    union() {
-        *difference() {
-            cylinder_outer(hbutton, buttonhole/2 - 0.3, buttonhole/2 - 0.3);
-            translate([0, 0, -eps]) {
-                cylinder_outer(5.0 + eps, 4.0/2, 3.3/2);
+module button() {
+    difference() {
+        translate([-buttonhole/2, -buttonhole/2, 0]) {
+            cube([buttonhole - 0.3, buttonhole - 0.3, hbutton]);
             }
-        }
-        translate([0, 0, hbutton]) {
-            label(text, va="center", ha="center");
+        translate([0, 0, -eps]) {
+            cylinder_outer(5.0 + eps, 4.0/2, 3.1/2);
         }
     }
 }
 
-*upper();
+module buttonlabel(text) {
+    translate([0, 0, hbutton]) {
+        label(text, va="center", ha="center");
+    }
+}
 
-*translate([0, 100, 0]) {
+if (what == 0 || what == 1) {
+    upper();
+}
+if (what == 2) {
     lower();
 }
-
-*translate([0, dspeaker / 2, 0]) {
-    speakerhook();
+if (what == 3) {
+    button();
+}
+if (what == 4) {
+    buttonlabel("C");
+}
+if (what == 5) {
+    buttonlabel("1");
+}
+if (what == 6) {
+    buttonlabel("2");
 }
 
-*usb_breakout();
-
-button("1");

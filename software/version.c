@@ -2,4 +2,4 @@
 
 #include <avr/pgmspace.h>
 
-const char PROGMEM SVNRev[] = "V3766M by DF5WC";
+const char PROGMEM SVNRev[] = "V3818 by DF5WC";
